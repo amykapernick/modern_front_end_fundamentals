@@ -41,3 +41,23 @@ jobs:
               repo: context.repo.repo,
               body: 'The build works! You can view the deploy preview at ${{steps.build_site.outputs.NETLIFY_URL}}'
             })
+
+  test:
+    needs: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repo Code
+        uses: actions/checkout@v3
+
+      - name: Install Packages
+        run: npm run ci
+
+      - name: Percy Test
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: npx @percy/cli snapshot tests/vr/snapshots.yml --base-url ${{needs.build.outputs.deploy_url}}
+
+      - name: Run Playwright Tests
+        run: npm run test:ui:ci
+        env:
+          SITE_URL: ${{needs.build.outputs.deploy_url}}

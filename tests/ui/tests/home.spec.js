@@ -6,17 +6,17 @@ test('Has "Home" in the title', async ( { page }) => {
 	await expect(page).toHaveTitle(/Home/)
 })
 
-test('Can click on a recipe', async ( { page }) => {
-	await page.goto('/')
+// test('Can click on a recipe', async ( { page }) => {
+// 	await page.goto('/')
 
 
-	// The title of the page should equal x
+// 	// The title of the page should equal x
 	
-})
+// })
 
 
 // Test: Recipe has correct title in page
-await expect(page).toHaveTitle(/Pasta Salad/)
+// await expect(page).toHaveTitle(/Pasta Salad/)
 
 
 // Test: Can add a task and it exists
