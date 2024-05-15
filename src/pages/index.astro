@@ -1,0 +1,17 @@
+---
+import Layout from '@layouts/default';
+import sets from '@data/sets.json'
+
+---
+
+<Layout>
+	<h2>Fun-damentals</h2>
+	<ul>
+		{Object.entries(sets).map(([id, {name}]) => (
+			<li>
+				{id} - {name}
+				<img src={`/img/sets/${id}.jpg`} />
+			</li>
+		))}
+	</ul>
+</Layout>

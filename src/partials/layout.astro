@@ -1,0 +1,55 @@
+---
+import "@styles/main.css";
+import '@css/main.css';
+import '@css/a11y.css';
+import Header from "@partials/header";
+import Footer from "@partials/footer";
+import Favicon from "@img/fundamentals.ico";
+import classes from "@utils/classes.cjs";
+
+const siteData = {
+  title: "Home",
+  description: "Lego collections",
+};
+
+const content = {
+  ...siteData,
+  ...Astro?.props?.content,
+};
+
+const { title, description } = content;
+---
+
+<style>
+  @import '@mixins';
+
+  main {
+
+    @include container_spacing;
+  }
+</style>
+
+<!DOCTYPE html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href={Favicon} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+
+  <body class={classes(Astro.props.class, import.meta.env.DEVTOOLS)}>
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
