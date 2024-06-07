@@ -1,0 +1,38 @@
+---
+import Layout from '@layouts/default';
+import sets from '@data/sets';
+
+export function getStaticPaths() {
+	return Object.entries(sets)
+		.map(([id, props]) => ({
+			params: {
+				id: id
+			},
+			props: props
+		}))
+}
+
+const { id } = Astro.params;
+const { name, category, tags, status, pieces } = Astro.props;
+const content = {
+	title: `${id} - ${name}`,
+	description: `LEGO set number ${id}, titled ${name} with ${pieces} pieces.`,
+}
+
+---
+
+<Layout content={content}>
+	<h1>{name}</h1>
+	<span>{id}</span>
+	<span>{pieces}</span>
+	<div class="img">
+		<img src={`/img/sets/${id}.jpg`} />
+	</div>
+	<ul>
+		{[category, ...tags]
+			.filter((tag, i, arr) => arr.indexOf(tag) === i)
+			.map(tag => (
+			<li>{tag}</li>
+		))}
+	</ul>
+</Layout>

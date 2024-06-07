@@ -11,7 +11,7 @@ const colours = {
 	pink: '#cb5699',
 	orange: '#f78d2b',
 	yellow: '#ffce03',
-	white: '#f5f0f0',
+	white: '#ffffff',
 	black: '#0d0d0d',
 	neutral: '@black',
 	light_purple_bright: '#84398F',

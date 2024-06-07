@@ -1,0 +1,135 @@
+---
+const {id, name, category, tags = [], status} = Astro.props
+---
+
+<style>
+	.card {
+		background: rgba($purple, 0.4);
+		padding: 10px;
+		height: 100%;
+		border-radius: 10px;
+		position: relative;
+	}
+
+	.img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		background: $white;
+		border-radius: 10px;
+		overflow: hidden;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: contain;
+		}
+	}
+
+	.id, .status {
+		position: absolute;
+		top: 15px;
+		padding: 0.2em;
+		border-radius: 5px;
+		line-height: 1;
+	}
+
+	.id {
+		right: 15px;
+		background: $purple;
+		color: $white;
+		
+	}
+
+	.status {
+		left: 15px;
+		background: $navy;
+		color: $white;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0;
+		list-style: none;
+		margin: -5px;
+
+		& li {
+			background: rgba($purple, 0.2);
+			padding: 0.2em 0.5em;
+			border-radius: 5px;
+			margin: 5px;
+			line-height: 1;
+		}
+	}
+
+	.name {
+		margin: 0.5em 0 0.2em;
+	}
+
+	@supports(grid-template-areas: '.') {
+		.card {
+			display: grid;
+			margin: 0;
+			grid-column-gap: 5px;
+			grid-row-gap: 10px;
+			grid-template-rows: auto 1fr auto;
+			grid-template-areas:
+				'img'
+				'name'
+				'tags';
+			max-width: unset;
+		}
+
+		.img, .status, .id {
+			grid-area: img;
+		}
+
+		.id, .status {
+			position: static;
+		}
+
+		.id {
+			align-self: start;
+			justify-self: end;
+			margin: 5px 5px 0 0;
+		}
+
+		.status {
+			align-self: end;
+			justify-self: start;
+			margin: 0 0 5px 5px;
+		}
+
+		.name {
+			grid-area: name;
+			margin: 0;
+		}
+
+		.tags {
+			grid-area: tags;
+		}
+	}
+</style>
+
+<div class="card" data-devTools="card">
+	<div class="img">
+		<img src={`/img/sets/${id}.jpg`} />
+	</div>
+	<span class="id">{id}</span>
+	<h3 class="name">
+		<a href={`/sets/${id}`}>
+			{name}
+		</a>
+	</h3>
+	<ul class="tags">
+		{[category, ...tags]
+			.filter((tag, i, arr) => arr.indexOf(tag) === i)
+			.map(tag => (
+			<li>{tag}</li>
+		))}
+	</ul>
+	<span class="status">{status}</span>
+	
+</div>
