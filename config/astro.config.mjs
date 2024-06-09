@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import devTools from '../_astro/devTools';
 
 export default defineConfig({
 	output: 'static',
@@ -16,5 +17,6 @@ export default defineConfig({
 		}
 	},
 	integrations: [
+		devTools
 	],
 });

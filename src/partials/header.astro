@@ -7,29 +7,33 @@ const menuItems = [
 	link: '/',
   },
   {
-	label: 'Meals',
+	label: 'Sets',
 	items: [
 		{
-			label: 'Recipes',
-			link: '/recipes',
+			label: 'Assembled',
+			link: '/assembled'
 		},
 		{
-			label: 'Meal Planner',
-			link: '/meals/planning'
+			label: 'Wishlist',
+			link: '/wishlist'
 		},
 		{
-			label: 'Shopping List',
-			link: '/meals/list'
+			label: 'Unreleased',
+			link: '/unreleased'
+		},
+		{
+			label: 'Stored',
+			link: '/stored'
+		},
+		{
+			label: 'All',
+			link: '/sets'
 		}
 	]
   },
   {
-	label: 'To Do',
-	link: '/tasks'
-  },
-  {
-	label: 'Calendar',
-	link: '/calendar'
+	label: 'Lego Store',
+	link: 'https://lego.com.au/'
   }
 ]; 
 ---
@@ -43,17 +47,38 @@ const menuItems = [
 
 		font-size: 1.2em;
 		font-weight: 700;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		padding: 10px;
 	}
  
 	.title {
 		display: block;
-		font-size: 3em;
+		font-size: 5em;
 		text-decoration: none;
+		width: 100%;
+		text-align: center;
+		line-height: 1;
+
+		& img {
+			height: 1em;
+			width: auto;
+		}
+	}
+
+	nav {
+		flex-grow: 1;
 	}
 
 	.menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		margin: 0;
-		padding: 0;
+		padding: 10px 0;
 
 		& li {
 			position: relative;
@@ -109,6 +134,23 @@ const menuItems = [
 		@include button_text;
 	}
 
+	@media(min-width: 40em) {
+		.header {
+			justify-content: space-between;
+			flex-wrap: nowrap;
+			padding: 20px;
+		}
+
+		.title {
+			width: auto;
+		}
+
+		.menu {
+			justify-content: flex-end;
+			margin-left: 30px;
+		}
+	}
+
 	@media(max-width: 50em) {
 		.sub {
 			width: max-content;
@@ -126,12 +168,12 @@ const menuItems = [
 	})
 </script>
 
-<header data-testid="header" class="header">
+<header data-testid="header" class="header" data-devTools="header">
 	<a href="/" class="title"><img src={Logo} /></a>
-	  <nav>
-		<ul class="menu">
+	<nav>
+		<ul class="menu" data-devTools="menu">
 			{menuItems.map(({label, link, items}) => (
-				<li class="menu_item">
+				<li class="menu_item" data-devTools="menu_item">
 					{items ? 
 						<>
 							<button class="menu_section">{label}</button>
@@ -139,13 +181,23 @@ const menuItems = [
 								{
 									items.map(item => (
 										<li>
-											<a href={item.link}>{item.label}</a>
+											<a 
+												href={item.link}
+												target={item.link.startsWith('http') ? '_blank' : '_self'}
+											>
+												{item.label}
+											</a>
 										</li>
 									))
 								}
 							</ul>
 						</> : 
-						<a href={link}>{label}</a>
+						<a 
+							href={link}
+							target={link.startsWith('http') ? '_blank' : '_self'}
+						>
+							{label}
+						</a>
 					}	
 				</li>
 			))}

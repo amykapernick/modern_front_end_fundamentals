@@ -1,4 +1,4 @@
-{
+const sets = {
 	"10313": {
 		"name": "Wildflower Bouquet",
 		"category": "Botanical",
@@ -48,7 +48,7 @@
 			"Icons"
 		],
 		"pieces": 812,
-		"status": "Assembled"
+		"status": "Stored"
 	},
 	"92177": {
 		"name": "Ship in a Bottle",
@@ -141,7 +141,7 @@
 			"Icons"
 		],
 		"pieces": 758,
-		"status": "Wishlist"
+		"status": "Assembled"
 	},
 	"10326": {
 		"name": "Natural History Museum",
@@ -169,7 +169,7 @@
 			"Vehicles"
 		],
 		"pieces": 384,
-		"status": "Announced"
+		"status": "Unreleased"
 	},
 	"43249": {
 		"name": "Stitch",
@@ -190,6 +190,8 @@
 		"name": "Mona Lisa",
 		"category": "Art",
 		"pieces": 1503,
-		"status": "Announced"
+		"status": "Unreleased"
 	}
 }
+
+export default sets

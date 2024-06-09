@@ -1,17 +1,33 @@
 ---
 import Layout from '@layouts/default';
-import sets from '@data/sets.json'
+import allSets from '@data/sets'
+import Sets from '@partials/sets';
+
+let statuses = {}
+
+Object.entries(allSets).forEach(([id, props]) => {
+	const status = props.status.toLowerCase().replace(/\s/g, '-')
+	if(!statuses[status]) {
+		statuses[status] = {
+			status: props.status,
+			sets: []
+		}
+	}
+
+	statuses[status].sets.push({
+		id,
+		...props
+	})
+})
 
 ---
 
 <Layout>
-	<h2>Fun-damentals</h2>
-	<ul>
-		{Object.entries(sets).map(([id, {name}]) => (
-			<li>
-				{id} - {name}
-				<img src={`/img/sets/${id}.jpg`} />
-			</li>
-		))}
-	</ul>
+	<h1>Fun-damentals</h1>
+	{Object.values(statuses).map(({status, sets}) => (
+		<section>
+			<h2>{status}</h2>
+			<Sets sets={sets} />
+		</section>
+	))}
 </Layout>
