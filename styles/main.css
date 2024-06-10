@@ -1,1 +1,40 @@
 /* Turn on CSS Mode then write your CSS styles here */
+/* Flexbox */
+/* Menu Items */
+.header .menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin: -10px;
+}
+
+.header .menu .menu_item {
+	margin: 10px;
+}
+
+/* Cards/Sets */
+.sets {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sets .item {
+	/* flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 250px; */
+	flex: 1 1 250px;
+}
+
+@supports(grid-template-areas: '.') {
+	/* CSS Here */
+	.sets {
+		display: grid;
+		margin: 0;
+		grid-gap: 20px;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
+
+	.sets .item {
+		margin: 0;
+	}
+}

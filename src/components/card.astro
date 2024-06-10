@@ -1,5 +1,5 @@
 ---
-const {id, name, category, tags = [], status} = Astro.props
+const { id, name, category, tags = [], status } = Astro.props
 ---
 
 <style>
@@ -69,48 +69,53 @@ const {id, name, category, tags = [], status} = Astro.props
 	}
 
 	@supports(grid-template-areas: '.') {
-		.card {
-			display: grid;
-			margin: 0;
-			grid-column-gap: 5px;
-			grid-row-gap: 10px;
-			grid-template-rows: auto 1fr auto;
-			grid-template-areas:
-				'img'
-				'name'
-				'tags';
-			max-width: unset;
-		}
-
-		.img, .status, .id {
-			grid-area: img;
-		}
-
 		.id, .status {
 			position: static;
 		}
+	}
 
-		.id {
-			align-self: start;
-			justify-self: end;
-			margin: 5px 5px 0 0;
-		}
+	:global(body:not(.css_mode)) {
+		@supports(grid-template-areas: '.') {
+			& .card {
+				display: grid;
+				grid-column-gap: 5px;
+				grid-row-gap: 10px;
+				grid-template-rows: auto 1fr auto;
+				grid-template-areas:
+					'img'
+					'name'
+					'tags';
+				max-width: unset;
+			}
 
-		.status {
-			align-self: end;
-			justify-self: start;
-			margin: 0 0 5px 5px;
-		}
+			& .img, & .status, & .id {
+				grid-area: img;
+			}
 
-		.name {
-			grid-area: name;
-			margin: 0;
-		}
+			& .id {
+				align-self: start;
+				justify-self: end;
+				margin: 5px 5px 0 0;
+			}
 
-		.tags {
-			grid-area: tags;
+			& .status {
+				align-self: end;
+				justify-self: start;
+				margin: 0 0 5px 5px;
+			}
+
+			& .name {
+				grid-area: name;
+				margin: 0;
+			}
+
+			& .tags {
+				grid-area: tags;
+			}
 		}
 	}
+
+	
 </style>
 
 <div class="card" data-devTools="card">

@@ -24,17 +24,11 @@ const content = {
 ---
 
 <style>
-	article {
-		overflow: hidden;
-		clear: both;
-	}
-
 	header {
 		display: grid;
 		grid-template-columns: auto 1fr;
 		grid-gap: 10px 20px;
 		margin-bottom: 40px;
-		clear: both;
 	}
 
 	h1 {
@@ -95,8 +89,6 @@ const content = {
 	}
 
 	.img {
-		float: right;
-		margin-left: 20px;
 		width: 400px;
 		height: 400px;
 		
@@ -109,18 +101,14 @@ const content = {
 	}
 
 	.tags {
-		display: flex;
-		flex-wrap: wrap;
 		padding: 0;
 		list-style: none;
-		margin: -5px;
 		font-size: 2em;
 
 		& li {
 			background: rgba($purple, 0.2);
 			padding: 0.2em 0.5em;
 			border-radius: 5px;
-			margin: 5px;
 			line-height: 1;
 		}
 	}
@@ -134,11 +122,37 @@ const content = {
 			margin-top: 20px;
 		}
 	}
+
+	:global(body:not(.css_mode)) {
+		& .tags {
+			display: flex;
+			flex-wrap: wrap;
+			margin: -5px;
+		}
+
+		& .tag {
+			margin: 5px;
+		}
+
+		& article {
+			overflow: hidden;
+			clear: both;
+		}
+
+		& header {
+			clear: both;
+		}
+
+		& .img {
+			float: right;
+			margin-left: 20px;
+		}
+	}
 </style>
 
 <Layout content={content}>
-	<article>
-		<header>
+	<article class="article" data-devTools="article">
+		<header class="header" data-devTools="header">
 			<h1>{name}</h1>
 			<span class="id">{id}</span>
 			<span class="pieces">🧱 {pieces} pieces</span>
@@ -146,11 +160,11 @@ const content = {
 		<div class="img">
 			<img src={`/img/sets/${id}.jpg`} />
 		</div>
-		<ul class="tags">
+		<ul class="tags" data-devTools="tags">
 			{[category, ...tags]
 				.filter((tag, i, arr) => arr.indexOf(tag) === i)
 				.map(tag => (
-				<li>{tag}</li>
+				<li class="tag" data-devTools="tag">{tag}</li>
 			))}
 		</ul>
 		<section>
