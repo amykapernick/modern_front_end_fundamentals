@@ -59,14 +59,10 @@ if(Astro.request.method === 'POST') {
 	}
 
 	.range {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		grid-template-areas: 'range number' 'labels number';
-		
 		& input{
 			&[type="number"] {
 				width: 8ch;
-				grid-area: number;
+				
 				background: transparent;
 				border-color: transparent;
 				font-size: 1.2em;
@@ -76,6 +72,20 @@ if(Astro.request.method === 'POST') {
 
 				&:focus {
 					background: rgba($white, 0.5);
+				}
+			}
+		}
+	}
+
+	:global(body:not(.css_mode)) {
+		& .range {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-areas: 'range number' 'labels number';
+
+			& input{
+				&[type="number"] {
+					grid-area: number;
 				}
 			}
 		}
@@ -105,7 +115,7 @@ if(Astro.request.method === 'POST') {
 			<option value="Technic" />
 		</datalist>
 		<label for="field_pieces">Pieces</label>
-		<div class="range">
+		<div class="range" data-devTools="range">
 			<input type="range" id="field_pieces" name="pieces" min="0" max="12000" step="50" value="0" required list="pieces_list" />
 			<datalist id="pieces_list">
 				<option value="0">0</option>

@@ -40,16 +40,12 @@ input, select, textarea {
 	accent-color: var(--purple_bright);
 
 	&[type="range"] {
-		margin: 0 auto;
 		padding: 0;
-		width: calc(100% - (20px * 2));
 		border: none;
 		background: none;
 		accent-color: var(--purple_bright);
 
 		& + datalist {
-			display: grid;
-			grid-template-columns: 10px repeat(auto-fit, minmax(10px, 1fr)) 10px;
 			width: 100%;
 			font-size: .6em;
 			white-space: break-spaces;
@@ -65,6 +61,26 @@ input, select, textarea {
 
 				&:first-child {
 					grid-column: 2;
+				}
+			}
+		}
+	}
+}
+
+body:not(.css_mode) {
+	& input {
+		&[type="range"] {
+			margin: 0 auto;
+			width: calc(100% - (20px * 2));
+	
+			& + datalist {
+				display: grid;
+				grid-template-columns: 10px repeat(auto-fit, minmax(10px, 1fr)) 10px;
+	
+				option {
+					&:first-child {
+						grid-column: 2;
+					}
 				}
 			}
 		}
