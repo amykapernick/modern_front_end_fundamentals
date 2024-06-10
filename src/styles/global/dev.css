@@ -1,17 +1,61 @@
 
 
 body {
+	padding: 10px;
+
 	& #dev-toolbar-root[data-hidden] {
 		bottom: 0px;
 	}
 
-	&.development {
-		padding: 10px;
-	
+	& *[data-devTools], & *[id] {
+		outline: 10px dotted transparent;
+		outline-offset: 0;
+
+		&:target {
+			outline-color: var(--colour, $purple);
+		}
+
+		&[data-devTools="header"] {
+			--colour: $pink;
+
+			outline-offset: 3px;
+		}
+
+		&[data-devTools="menu"] {
+			--colour: $green;
+
+			outline-offset: 2px;
+		}
+
+		&[data-devTools="menu_item"] {
+			--colour: $light_yellow;
+			--left: 20%;
+
+			outline-offset: -3px;
+		}
+
+		&[data-devTools="sets"] {
+			--colour: $blue;
+		}
+
+		&[data-devTools="card"] {
+			--colour: $green;
+			--left: 60%;
+		}
+
+		&[data-devTools="item"] {
+			--colour: $orange;
+			
+
+			outline-offset: -2px;
+		}
+	}
+
+	&.development, &.css_mode {	
 		& *[data-devTools] {
 			position: relative;
-			outline: 3px dotted var(--colour, $purple);
-			outline-offset: 0;
+			outline-color: var(--colour, $purple);
+			outline-width: 3px;
 	
 			&::before {
 				content: '.' attr(data-devTools);
@@ -33,34 +77,6 @@ body {
 				&::before {
 					content: normal;
 				}
-			}
-	
-			&[data-devTools="header"] {
-				--colour: $pink;
-	
-				outline-offset: 3px;
-			}
-	
-			&[data-devTools="menu"] {
-				--colour: $green;
-	
-				outline-offset: 2px;
-			}
-	
-			&[data-devTools="menu_item"] {
-				--colour: $light_yellow;
-				--left: 20%;
-	
-				outline-offset: -3px;
-				outline-width: 2px;
-			}
-
-			&[data-devTools="sets"] {
-				--colour: $blue;
-			}
-
-			&[data-devTools="card"] {
-				--colour: $green;
 			}
 		}
 	}

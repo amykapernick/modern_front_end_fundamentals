@@ -1,0 +1,15 @@
+---
+import Layout from '@layouts/default';
+import HTMLElements from '../partials/elements'
+
+const content = {
+	title: 'HTML Fun-damentals',
+	description: 'List the HTML elements and their examples',
+};
+
+---
+
+<Layout content={content}>
+	<h1>HTML Fun-damentals</h1>
+	<HTMLElements client:only />
+</Layout>

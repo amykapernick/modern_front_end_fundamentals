@@ -1,0 +1,14 @@
+.elements {
+	margin: -20px;
+	padding: 10px;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+.element {
+	margin: 10px;
+	padding: 0;
+	flex-grow: 1;
+}

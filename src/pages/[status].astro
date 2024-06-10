@@ -1,7 +1,9 @@
 ---
 import Layout from '@layouts/default';
-import allSets from '@data/sets';
+import allSets from '@data/sets.json';
 import Sets from '@partials/sets';
+
+export const prerender = true;
 
 export function getStaticPaths() {
 	let statuses = {}
@@ -20,6 +22,8 @@ export function getStaticPaths() {
 			...props
 		})
 	})
+
+	console.log({allSets, statuses})
 
 	return Object.entries(statuses)
 		.map(([status, props]) => ({

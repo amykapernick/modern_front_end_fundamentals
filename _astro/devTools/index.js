@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'node:url';
 
 const config = {
-  name: 'my-astro-integration',
+  name: 'astro-dev-tools',
   hooks: {
     'astro:config:setup': ({ addDevToolbarApp }) => {
       addDevToolbarApp({

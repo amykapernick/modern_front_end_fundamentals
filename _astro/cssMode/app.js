@@ -3,9 +3,12 @@ import { defineToolbarApp } from "astro/toolbar";
 const devToolsApp = defineToolbarApp({
 	init(canvas, app, ...args) {
 		const body = document.querySelector('body');
-		const bodyClass = 'development'
+		const bodyClass = 'css_mode'
 
-		app.onToggled(({ state }) => {
+
+
+		app.onToggled(({ state, ...params }) => {
+			console.log({ app, canvas, args, params })
 			if (state) {
 				if (!body.classList.contains(bodyClass)) {
 					body.classList.add(bodyClass);

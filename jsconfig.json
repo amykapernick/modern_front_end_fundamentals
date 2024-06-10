@@ -18,7 +18,7 @@
         "src/pages/*.astro"
       ],
       "@styles/*": [
-        "src/styles/*",
+        "src/styles/*"
       ],
       "@utils/*": [
         "utils/*"
@@ -35,6 +35,8 @@
       "@css/*": [
         "styles/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

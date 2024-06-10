@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
 import devTools from '../_astro/devTools';
+import cssMode from '../_astro/cssMode';
+import react from '@astrojs/react';
 
 export default defineConfig({
-	output: 'static',
+	output: 'server',
 	vite: {
 		css: {
 			postcss: `./config`
@@ -17,6 +19,8 @@ export default defineConfig({
 		}
 	},
 	integrations: [
-		devTools
+		devTools,
+		cssMode,
+		react()
 	],
 });

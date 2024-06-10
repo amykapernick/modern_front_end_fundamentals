@@ -1,0 +1,179 @@
+---
+import Layout from '@layouts/default';
+import sets from '@data/sets.json'
+import { fs } from 'file-system';
+
+const content = {
+	title: 'Add New Set',
+	description: 'Add a new LEGO set to the database.',
+};
+
+if(Astro.request.method === 'POST') {
+	try {
+		const data = await Astro.request.formData()
+
+		const setData = {
+			id: data.get('id'),
+			name: data.get('name'),
+			category: data.get('category'),
+			pieces: data.get('pieces'),
+			tags: data.getAll('tags'),
+			status: data.get('status'),
+		}
+
+		fs.writeFile(
+			`public/img/sets/${setData.id}.jpg`, 
+			Buffer.from(data.get('imageData'), 'base64'),
+			(error) => {
+				if (error) console.error(error)
+			}
+		);
+
+		// Update the sets data with the new set
+
+		fs.writeFile(
+			'_data/sets.json',
+			JSON.stringify({
+				...sets,
+				[setData.id]: setData,
+			}, null, 2),
+			(error) => {
+				if (error) console.error(error)
+			}
+		);
+		
+	}
+	catch(error) {
+		if (error instanceof Error) {
+			console.error(error.message);
+		}
+	}
+}
+
+---
+
+<style>
+	form {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.range {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-areas: 'range number' 'labels number';
+		
+		& input{
+			&[type="number"] {
+				width: 8ch;
+				grid-area: number;
+				background: transparent;
+				border-color: transparent;
+				font-size: 1.2em;
+				padding: 0.1em 0.2em;
+				text-align: right;
+				margin: 0;
+
+				&:focus {
+					background: rgba($white, 0.5);
+				}
+			}
+		}
+	}
+</style>
+
+<Layout content={content}>
+	<h1>Add New Set</h1>
+	<form method="POST" enctype="multipart/form-data">
+		<label for="field_id">Set ID</label>
+		<input type="number" id="field_id" name="id" required />
+		<label for="field_name">Set Name</label>
+		<input type="text" id="field_name" name="name" required />
+		<label for="field_category">Category</label>
+		<input type="text" id="field_category" name="category" required list="categories" />
+		<datalist id="categories">
+			<option value="Botanical" />
+			<option value="Art" />
+			<option value="Friends" />
+			<option value="Ideas" />
+			<option value="Bricklink Designer Program" />
+			<option value="Creator" />
+			<option value="Icons" />
+			<option value="Architecture" />
+			<option value="City" />
+			<option value="Disney" />
+			<option value="Technic" />
+		</datalist>
+		<label for="field_pieces">Pieces</label>
+		<div class="range">
+			<input type="range" id="field_pieces" name="pieces" min="0" max="12000" step="50" value="0" required list="pieces_list" />
+			<datalist id="pieces_list">
+				<option value="0">0</option>
+				<option value="1000">1,000</option>
+				<option value="2000">2,000</option>
+				<option value="3000">3,000</option>
+				<option value="4000">4,000</option>
+				<option value="5000">5,000</option>
+				<option value="6000">6,000</option>
+				<option value="7000">7,000</option>
+				<option value="8000">8,000</option>
+				<option value="9000">9,000</option>
+				<option value="10000">10,000</option>
+				<option value="11000">11,000</option>
+				<option value="12000">12,000</option>
+			</datalist>
+			<label for="field_pieces_number" class="sr-only">Pieces Number</label>
+			<input type="number" id="field_pieces_number" name="pieces_number" value="0" required />
+		</div>
+		<label for="field_tags">Tags</label>
+		<select name="tags" id="field_tags" multiple>
+			<option value="Adult">Adult</option>
+			<option value="Bouquet">Bouquet</option>
+			<option value="Flowers">Flowers</option>
+			<option value="Miscellaneous">Miscellaneous</option>
+			<option value="Landmarks">Landmarks</option>
+			<option value="Modular Buildings">Modular Buildings</option>
+			<option value="Space">Space</option>
+			<option value="Traffic">Traffic</option>
+			<option value="Vehicles">Vehicles</option>
+		</select>
+		<label for="field_status">Status</label>
+		<select name="status" id="field_status">
+			<option value="Assembled">Assembled</option>
+			<option value="Stored">Stored</option>
+			<option value="Wishlist">Wishlist</option>
+			<option value="Unreleased">Unreleased</option>
+		</select>
+		<label for="field_image">Image</label>
+		<input type="file" id="field_image" name="image" accept=".jpg" />
+		<input type="hidden" id="field_imageData" name="imageData" />
+		<button type="submit">Add Set</button>
+	</form>
+</Layout>
+
+<script>
+	document.querySelector('input[name="image"]').addEventListener('change',  (event) => {
+		const file = event.target.files[0];
+		const reader = new FileReader();
+
+		reader.onload = function(event) {
+			const arrayBuffer = event.target.result;
+			const base64String = btoa(
+				new Uint8Array(arrayBuffer)
+					.reduce((data, byte) => data + String.fromCharCode(byte), '')
+			);
+
+			document.querySelector('input[name="imageData"]').value = base64String;
+		};
+
+		reader.readAsArrayBuffer(file);
+	});
+
+	document.querySelector('input[name="pieces"]').addEventListener('input', (event) => {
+		document.querySelector('input[name="pieces_number"]').value = event.target.value;
+	});
+
+	document.querySelector('input[name="pieces_number"]').addEventListener('input', (event) => {
+		document.querySelector('input[name="pieces"]').value = event.target.value;
+	});
+</script>

@@ -38,4 +38,35 @@ input, select, textarea {
 	box-shadow: none;
 	line-height: 1.5;
 	accent-color: var(--purple_bright);
+
+	&[type="range"] {
+		margin: 0 auto;
+		padding: 0;
+		width: calc(100% - (20px * 2));
+		border: none;
+		background: none;
+		accent-color: var(--purple_bright);
+
+		& + datalist {
+			display: grid;
+			grid-template-columns: 10px repeat(auto-fit, minmax(10px, 1fr)) 10px;
+			width: 100%;
+			font-size: .6em;
+			white-space: break-spaces;
+			overflow-wrap: break-word;
+
+			option {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+				padding: 0;
+				text-align: center;
+				white-space: pre-wrap;
+
+				&:first-child {
+					grid-column: 2;
+				}
+			}
+		}
+	}
 }

@@ -1,37 +1,44 @@
 ---
 import Card from "@components/card"
-import { Image, Picture } from "astro:assets"
 
 const { sets } = Astro.props
 ---
 
 <style>
 	.sets {
-		margin: -20px;
+		margin: 0;
 		padding: 10px;
 		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
 	}
 
 	.item {
-		margin: 10px;
-		padding: 0;
-		max-width: 300px;
+		padding: 10px;
 	}
 
-	
-
-	@supports(grid-template-areas: '.') {
-		.sets {
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-			grid-gap: 20px;
-			margin: 0;
+	:global(body:not(.css_mode)) {
+		& .sets {
+			margin: -20px;
+			
+			display: flex;
+			flex-wrap: wrap;
 		}
 
-		.item {
-			margin: 0;
+		& .item {
+			margin: 10px;
+			max-width: 300px;
+		}
+
+		@supports(grid-template-areas: '.') {
+			& .sets {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+				grid-gap: 20px;
+				margin: 0;
+			}
+
+			& .item {
+				margin: 0;
+			}
 		}
 	}
 </style>
@@ -40,7 +47,7 @@ const { sets } = Astro.props
 	{sets
 		.sort((a, b) => a.id - b.id)
 		.map((props) => (
-		<li class="item">
+		<li class="item" data-devTools="item">
 			<Card {...props} />
 		</li>
 	))}

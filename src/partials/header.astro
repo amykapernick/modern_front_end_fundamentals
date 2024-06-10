@@ -34,6 +34,14 @@ const menuItems = [
   {
 	label: 'Lego Store',
 	link: 'https://lego.com.au/'
+  },
+  {
+	label: 'HTML Elements',
+	link: '/html'
+  },
+  {
+	label: 'Add Set',
+	link: '/add'
   }
 ]; 
 ---
@@ -74,9 +82,6 @@ const menuItems = [
 	}
 
 	.menu {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
 		margin: 0;
 		padding: 10px 0;
 
@@ -94,6 +99,14 @@ const menuItems = [
 			color: inherit;
 			font-size: inherit;
 			font-weight: inherit;
+		}
+	}
+
+	:global(body:not(.css_mode)) {
+		& .menu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 	}
 
@@ -146,8 +159,13 @@ const menuItems = [
 		}
 
 		.menu {
-			justify-content: flex-end;
 			margin-left: 30px;
+		}
+
+		:global(body:not(.css_mode)) {
+			& .menu {
+				justify-content: flex-end;
+			}
 		}
 	}
 
@@ -168,8 +186,8 @@ const menuItems = [
 	})
 </script>
 
-<header data-testid="header" class="header" data-devTools="header">
-	<a href="/" class="title"><img src={Logo} /></a>
+<header data-testid="header" class="header" data-devTools="header" id="header">
+	<a href="/" class="title" id="a"><img src={Logo} /></a>
 	<nav>
 		<ul class="menu" data-devTools="menu">
 			{menuItems.map(({label, link, items}) => (
