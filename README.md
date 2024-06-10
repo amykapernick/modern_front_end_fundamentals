@@ -2,12 +2,12 @@
 
 ## Sections
 
-1. [Semantic HTML and Accessibility](./content/html-and-a11y.md)
-	- [Codepen Template](http://kapers.dev/workshop-semantichtml)
-	- [GitHub Repo](http://kapers.dev/workshop)
-2. [CSS Layouts and Modern CSS](./content/modern-css.md)
-3. [Accessibility Testing](./content/a11y-testing.md)
-4. [UI Testing](./content/ui-testing.md)
+1. [Semantic HTML and Accessibility](http://kapers.dev/workshop-semantichtml)
+	- [Codepen Template](https://codepen.io/amys_kapers/pen/QWZxJBb/66d0d7cdadb477f9a9d6e9918db23fd9)
+2. [CSS Layouts and Modern CSS](http://kapers.dev/workshop-css)
+   - [GitHub Repo](http://kapers.dev/workshop)
+3. [Accessibility Testing](http://kapers.dev/workshop-a11y)
+4. [UI Testing](http://kapers.dev/workshop-testing)
 
 
 ## Resources
