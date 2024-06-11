@@ -24,7 +24,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
           SITE_ID: ${{ secrets.SITE_ID }}
-        run: ./github/actions/netlify_deploy.sh
+        run: ./.github/actions/netlify_deploy.sh
 
       - uses: actions/github-script@v7
         with:
@@ -35,3 +35,5 @@ jobs:
               repo: context.repo.repo,
               body: 'The build works! You can view the deploy preview at ${{steps.build_site.outputs.NETLIFY_URL}}'
             })
+
+  test:
