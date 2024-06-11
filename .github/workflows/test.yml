@@ -35,5 +35,3 @@ jobs:
               repo: context.repo.repo,
               body: 'The build works! You can view the deploy preview at ${{steps.build_site.outputs.NETLIFY_URL}}'
             })
-
-  test:
