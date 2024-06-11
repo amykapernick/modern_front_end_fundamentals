@@ -148,3 +148,8 @@
 		grid-column: 2;
 	}
 } 
+
+*:focus {
+	/* outline: none !important; */
+	outline: 5px dotted chartreuse;
+}

@@ -190,7 +190,10 @@ const menuItems = [
 </script>
 
 <header data-testid="header" class="header" data-devTools="header" id="header">
-	<a href="/" class="title" id="a"><img src={Logo} /></a>
+	<a href="/" class="title" id="a">
+		<img src={Logo} />
+		<span class="sr-only">Modern Front End Fun-damentals</span>
+	</a>
 	<nav>
 		<ul class="menu" data-devTools="menu">
 			{menuItems.map(({label, link, items}) => (

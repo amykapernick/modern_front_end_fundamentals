@@ -48,6 +48,18 @@
     "pieces": 834,
     "status": "Wishlist"
   },
+  "10333": {
+    "id": "10333",
+    "name": "The Lord of the Rings: Barad-dûr",
+    "category": "Lord of the Rings",
+    "pieces": "5450",
+    "tags": [
+      "Adult",
+      "Landmarks",
+      "Modular Buildings"
+    ],
+    "status": "Wishlist"
+  },
   "10334": {
     "name": "Retro Radio",
     "category": "Icons",
@@ -191,5 +203,16 @@
     "category": "Bricklink Designer Program",
     "pieces": 2331,
     "status": "Wishlist"
+  },
+  "21434823": {
+    "id": "21434823",
+    "name": "Afdsbabahj",
+    "category": "gfdgdf",
+    "pieces": "5700",
+    "tags": [
+      "Bouquet",
+      "Miscellaneous"
+    ],
+    "status": "Assembled"
   }
 }
