@@ -35,3 +35,14 @@ jobs:
               repo: context.repo.repo,
               body: 'The build works! You can view the deploy preview at ${{steps.build_site.outputs.NETLIFY_URL}}'
             })
+
+  test:
+    need: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repo Code
+        uses: actions/checkout@v4
+
+      - name: Decode URL
+        id: decode_url
+        run: echo "DEPLOY_URL=$(echo "${{ needs.build.outputs.deploy_url }}" | base64 --decode | base64 --decode)" >> $GITHUB_OUTPUT
