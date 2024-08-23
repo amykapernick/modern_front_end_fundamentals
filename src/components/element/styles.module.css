@@ -83,7 +83,7 @@
 }
 
 .sample {
-	font-size: 3em;
+	font-size: 2.2em;
 	text-align: center;
 	grid-column: 1 / -1;
 	background: $black;

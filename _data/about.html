@@ -1,0 +1,83 @@
+<header>
+	<nav>
+		<a href="#forms">Forms</a>
+		<a href="#media">Media</a>
+		<a href="#videos">Videos</a>
+		<a href="#other">Other</a>
+	</nav>
+</header>
+<main id="main">
+	<article>
+		<h1>Semantic HTML</h1>
+		<p>Semantic HTML is really, really, really important.</p>
+		<aside>
+			<p>Writing semantic HTML is the single best thing we as developers can do for accessibility</p>
+		</aside>
+		<section id="forms">
+			<h2>Forms and labels</h2>
+
+			<form>
+				<label for="field_name">Full Name</label>
+				<input type="text" name="name" id="field_name" />
+				<label for="fdvbeUIPGBSDf">Email Address</label>
+				<input type="email" name="email" id="fdvbeUIPGBSDf" />
+				<label>
+					Phone Number
+					<input type="tel" name="phone" />
+				</label>
+				<label for="transport">Method of Transport</label>
+				<input type="text" id="transport" name="transport" list="transport_methods" />
+				<datalist id="transport_methods">
+					<option value="Lift">Lift, Elevator</option>
+					<option value="Rideshare">Lyft, Uber</option>
+					<option value="Lift/Carpool">Lift/Carpool</option>
+					<option value="Electric Scooter/Bike" />
+					<option value="Bus" />
+					<option value="Train" />
+					<option value="Walk" />
+					<option value="Tram" />
+				</datalist>
+				<label id="range">How important is Semantic HTML</label>
+				<input type="range" name="html" id="range" max="10" step="1" list="html_importance" />
+				<datalist id="html_importance">
+					<option value="0">Not even real programming</option>
+					<option value="5">I can read it</option>
+					<option value="10">More important than JavaScript</option>
+				</datalist>
+			</form>
+
+		</section>
+		<section id="media">
+			<h2>Media Items</h2>
+
+			<figure>
+				<picture>
+					<source srcset="https://assets.codepen.io/707165/image_300.webp" type="image/webp" media="(min-width: 900px)" />
+					<source srcset="https://assets.codepen.io/707165/image_300.jpg" media="(max-width: 400px)" />
+
+					<source srcset="https://assets.codepen.io/707165/image_600.jpg" media="(max-width: 600px)" />
+					<source srcset="https://assets.codepen.io/707165/image_900.jpg" media="(max-width: 900px)" />
+
+					<img src="https://assets.codepen.io/707165/image_1200.jpg" alt="" />
+				</picture>
+			</figure>
+
+			<h3 id="videos">Videos</h3>
+
+
+			<figure>
+				<video controls muted crossorigin>
+					<source src="https://assets.codepen.io/707165/video.mp4" type="video/mp4" />
+					<track src="https://assets.codepen.io/707165/subtitles.vtt" default kind="captions" srclang="en-AU" />
+					<p>Sorry, you can't watch that here, <a href="https://assets.codepen.io/707165/video.mp4" download="myVideo">download it instead</a></p>
+				</video>
+			</figure>
+		</section>
+		<section id="other">
+			<h2>Other Fun Things</h2>
+
+
+		</section>
+	</article>
+</main>
+<footer id="footer">&copy; 2023</footer>

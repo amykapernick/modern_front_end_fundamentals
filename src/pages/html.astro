@@ -11,5 +11,5 @@ const content = {
 
 <Layout content={content}>
 	<h1>HTML Fun-damentals</h1>
-	<HTMLElements client:only />
+	<HTMLElements client:only="react" apiUrl={import.meta.env.API_URL} />
 </Layout>

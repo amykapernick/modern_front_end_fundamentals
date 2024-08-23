@@ -3,19 +3,23 @@ import { Converter } from 'showdown'
 import styles from './styles.module.css'
 
 const Element = (props) => {
-	const {name, mdn, html, id, selfClosing, example, updateElements, elements } = props
+	const {name, mdn, html, id, selfClosing, example, updateElements, elements, apiUrl } = props
 	const [votes, setVotes] = useState(props.votes || 0)
-	const [markdown, setMarkdown] = useState(props.markdown || null)
+	const [markdown, setMarkdown] = useState(props.content || null)
 	const [processing, setProcessing] = useState(false)
 	const [open, setOpen] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const addVote = async () => {
 		setProcessing(true)
-		await fetch(`https://workshopapi.azurewebsites.net/workshop-htmlElements?element=${id}`, {
+		await fetch(`${apiUrl}/html`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
+			body: JSON.stringify({ 
+				votes: votes + 1,
+				page: id
+			 })
 		})
 			.then(res => res.json())
 			.then(res => {
@@ -34,7 +38,7 @@ const Element = (props) => {
 		if(!markdown) {
 			setLoading(true)
 
-			await fetch(`https://workshopapi.azurewebsites.net/workshop-htmlElements?element=${id}`, {
+			await fetch(`${apiUrl}/html?page=${id}`, {
 				method: 'GET',
 				headers: {
 					'Content-Type': 'application/json'

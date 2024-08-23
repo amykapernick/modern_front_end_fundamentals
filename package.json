@@ -6,21 +6,21 @@
     "dev": "astro dev --config ./config/astro.config.mjs",
     "start": "npm run dev",
     "build": "astro build",
+    "lint": "eslint -c ./config/eslint.config.mjs --fix",
+    "ts": "tsc",
     "clean": "rm -rf node_modules .asto dist"
   },
   "overrides": {
-    "@eslint-community/eslint-utils": {
-      "eslint": "^9.4.0"
+    "eslint-plugin-import": {
+      "eslint": "^9.9.0"
     },
-    "eslint-config-airbnb": {
-      "eslint": "^9.4.0"
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "^9.9.0"
     }
   },
   "dependencies": {
-    "@astrojs/react": "^3.5.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^4.10.1",
+    "@astrojs/react": "^3.6.2",
+    "astro": "^4.14.5",
     "dotenv": "^16.0.3",
     "file-system": "^2.2.2",
     "pa11y": "^8.0.0",
@@ -30,29 +30,25 @@
     "showdown": "^2.1.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.44.1",
-    "@types/node": "^20.14.2",
+    "@playwright/test": "^1.46.1",
     "astro-eslint-parser": "^1.0.2",
-    "eslint": "^9.4.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-astro": "^1.2.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
     "postcss-advanced-variables": "^4.0.0",
     "postcss-hexrgba": "^2.1.0",
     "postcss-html": "^1.5.0",
     "postcss-import": "^16.1.0",
     "postcss-mixins": "^10.0.1",
-    "postcss-nesting": "^12.1.5",
+    "postcss-nesting": "^13.0.0",
     "postcss-rgb": "^1.0.0",
-    "prettier": "^3.3.1",
-    "prettier-plugin-astro": "^0.14.0",
     "stylelint-config-astro": "^1.0.4",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
-    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-order": "^6.0.3",
-    "stylelint-prettier": "^5.0.0",
-    "stylelint-use-nesting": "^5.1.1"
+    "stylelint-prettier": "^5.0.2",
+    "stylelint-use-nesting": "^5.1.2"
   }
 }
