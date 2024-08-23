@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    output:
+      deploy_url: ${{ steps.build_site.outputs.NETLIFY_URL }}
     steps:
       - uses: actions/checkout@v2
 
