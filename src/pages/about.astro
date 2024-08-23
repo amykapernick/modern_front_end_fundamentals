@@ -10,8 +10,8 @@ const content = {
 ---
 
 <style is:global>
-	.embed_page {
-		& nav {
+	@scope (.embed_page) {
+		nav {
 			display: flex;
 			flex-wrap: wrap;
 			margin: -10px;
@@ -31,18 +31,18 @@ const content = {
 			}
 		}
 
-		& img, & video {
+		img, video {
 			display: block;
 			margin: 1em auto;
 		}
 
-		& img:not([width]), & video {
+		img:not([width]), video {
 			max-width: 100%;
 			height: auto;
 			max-height: 80vh;
 		}
 
-		& figure {
+		figure {
 			border: 2px solid var(--blue);
 			padding: 10px;
 
@@ -58,34 +58,32 @@ const content = {
 			}
 		}
 
-		& form {
+		form {
 			padding: 10px;
 			max-width: 800px;
 			margin: 0 auto;
 		}
 
-		& label, & legend {
+		label, legend {
 			display: block;
 			margin: 1em 0 0.2em;
 			font-weight: 700;
 		}
 
-		& input, & select, & textarea {
+		label:has(+ input[required]) {
+			&::after {
+				content: '*';
+			}
+		}
+
+		input, select, textarea {
 			display: block;
 			width: 100%;
 			padding: 10px 15px;
 			border: 2px solid currentColor;
 		}
 
-		& input {
-			&:invalid {
-				border-color: #e53f51;
-			}
-
-			&:valid {
-				border-color: #168119;
-			}
-
+		input {
 			&[type="range"] {
 				margin: 0 auto;
 				padding: 0;
@@ -162,7 +160,7 @@ const content = {
 
 		}
 
-		& form {
+		form {
 			& div {
 				&:has(input[type="range"] + datalist option:nth-child(1)) {
 					--opts: 1;
@@ -206,11 +204,11 @@ const content = {
 			}
 		}
 
-		& map area {
+		map area {
 			background: pink;
 		}
 
-		& footer {
+		footer {
 			text-align: center;
 		}
 	}

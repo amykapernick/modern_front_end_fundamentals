@@ -1,155 +1,26 @@
 /* Turn on CSS Mode then write your CSS styles here */
+/* New CSS */
+input {
+	&:invalid {
+		border-color: #e53f51;
+	}
+
+	&:valid {
+		border-color: #168119;
+	}
+}
+
+nav {
+	& a {
+		&:focus {
+			outline: 2px dotted chartreuse;
+		}
+	}
+}
+
+
 /* Flexbox */
 /* Menu Items */
-.header .menu {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	margin: -10px;
-}
 
-.header .menu .menu_item {
-	margin: 10px;
-}
 
 /* Cards/Sets */
-.sets {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.sets .item {
-	/* flex-grow: 1;
-	flex-shrink: 1;
-	flex-basis: 250px; */
-	flex: 1 1 250px;
-}
-
-@supports(grid-template-areas: '.') {
-	/* CSS Here */
-	.sets {
-		display: grid;
-		margin: 0;
-		grid-gap: 20px;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	}
-
-	.sets .item {
-		margin: 0;
-	}
-
-	.sets .item .card {
-		display: grid;
-		/* grid-template-rows: auto 1fr auto auto; */
-		grid-template-columns: 1fr 1fr;
-		/* grid-template-areas: 
-			'🖼️   🖼️'
-			'title title'
-			'dshbfdhufbdu  dshbfdhufbdu'
-			'id    status'; */
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas: 
-			'🖼️   🖼️'
-			'title title'
-			'dshbfdhufbdu  dshbfdhufbdu';
-	}
-
-	.card .img {
-		grid-area: 🖼️;
-	}
-
-	.card .name {
-		grid-area: title;
-	}
-
-	.card .tags {
-		grid-area: dshbfdhufbdu;
-	}
-
-	/* .card .id {
-		grid-area: id;
-	}
-
-	.card .status {
-		grid-area: status;
-	} */
-
-	.card .id, .card .status {
-		grid-area: 🖼️;
-	}
-
-	.card .id {
-		justify-self: end;
-		align-self: start;	
-		margin: 5px 5px 0 0;
-	}
-
-	.card .status {
-		justify-self: start;
-		align-self: end;
-		margin: 0 0 5px 5px;
-	}
-}
-
-.article {
-	clear: right;
-	overflow: hidden;
-}
-
-.article .img {
-	float: right;
-	margin-left: 10px;
-	margin-bottom: 10px;
-}
-
-.article .tags {
-	display: flex;
-	flex-wrap: wrap;
-	margin: -10px;
-}
-
-.article .tags .tag {
-	margin: 10px;
-}
-
-@supports(gap: 10px) {
-	.article .tags {
-		gap: 10px;
-		margin: 0;
-	}
-
-	.article .tags .tag {
-		margin: 0;
-	}
-}
-
-@supports(grid-template-areas: '.') {
-	.range {
-		display: grid;
-		grid-template-columns: 1fr auto;
-		grid-template-areas: 'range number' 'labels number';
-	}
-
-	.range input[type="number"] {
-		grid-area: number;
-	}
-
-	.range input[type="range"] {
-		width: calc(100% - (20px * 2));
-		margin: 0 auto;
-	}
-
-	.range input[type="range"] + datalist {
-		display: grid;
-		grid-template-columns: 10px repeat(auto-fit, minmax(10px, 1fr)) 10px;
-	}
-
-	.range input[type="range"] + datalist option:first-child {
-		grid-column: 2;
-	}
-} 
-
-*:focus {
-	/* outline: none !important; */
-	outline: 5px dotted chartreuse;
-}
