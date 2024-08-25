@@ -119,22 +119,22 @@ const { id, name, category, tags = [], status } = Astro.props
 </style>
 
 <div class="card" data-devTools="card">
-	<div class="img">
+	<div class="img" data-devTools="img">
 		<img src={`/img/sets/${id}.jpg`} />
 	</div>
-	<span class="id">{id}</span>
-	<h3 class="name">
+	<span data-devTools="id" class="id">{id}</span>
+	<h3 data-devTools="name" class="name">
 		<a href={`/sets/${id}`}>
 			{name}
 		</a>
 	</h3>
-	<ul class="tags">
+	<ul data-devTools="tags" class="tags">
 		{[category, ...tags]
 			.filter((tag, i, arr) => arr.indexOf(tag) === i)
 			.map(tag => (
 			<li>{tag}</li>
 		))}
 	</ul>
-	<span class="status">{status}</span>
+	<span data-devTools="status" class="status">{status}</span>
 	
 </div>

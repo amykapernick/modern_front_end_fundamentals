@@ -1,5 +1,6 @@
 ---
 import Layout from '@layouts/default';
+import Status from '@data/status.astro'
 import sets from '@data/sets.json'
 import { fs } from 'file-system';
 
@@ -147,13 +148,7 @@ if(Astro.request.method === 'POST') {
 			<option value="Traffic">Traffic</option>
 			<option value="Vehicles">Vehicles</option>
 		</select>
-		<label for="field_status">Status</label>
-		<select name="status" id="field_status">
-			<option value="Assembled">Assembled</option>
-			<option value="Stored">Stored</option>
-			<option value="Wishlist">Wishlist</option>
-			<option value="Unreleased">Unreleased</option>
-		</select>
+		<Status />
 		<label for="field_image">Image</label>
 		<input type="file" id="field_image" name="image" accept=".jpg" />
 		<input type="hidden" id="field_imageData" name="imageData" />

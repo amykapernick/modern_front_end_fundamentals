@@ -23,8 +23,6 @@ export function getStaticPaths() {
 		})
 	})
 
-	console.log({allSets, statuses})
-
 	return Object.entries(statuses)
 		.map(([status, props]) => ({
 			params: {

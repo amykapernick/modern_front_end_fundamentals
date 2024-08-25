@@ -11,6 +11,7 @@
 	--neutral: #{$neutral};
 	--background: #{$background};
 	--neutral_light: #{$white};
+	--white: #{$white};
 
 	@media(prefers-color-scheme: dark) {
 		--purple_bright: #{$light_purple_bright};

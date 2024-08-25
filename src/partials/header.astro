@@ -61,9 +61,6 @@ const menuItems = [
 		font-weight: 700;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
 		padding: 10px;
 	}
  
@@ -105,6 +102,11 @@ const menuItems = [
 	}
 
 	:global(body:not(.css_mode)) {
+		& header {
+			justify-content: center;
+			align-items: center;
+		}
+
 		& .menu {
 			display: flex;
 			flex-wrap: wrap;

@@ -22,12 +22,27 @@ Object.entries(allSets).forEach(([id, props]) => {
 
 ---
 
+<style>
+	.statuses {
+		overflow-x: auto;
+		gap: 10px;
+	}
+
+	:global(body:not(.css_mode)) {
+		& .statuses {
+			display: flex;
+		}
+	}
+</style>
+
 <Layout>
 	<h1>Fun-damentals</h1>
-	{Object.values(statuses).map(({status, sets}) => (
-		<section>
+	<div class="statuses" data-devTools="statuses">
+		{Object.values(statuses).map(({status, sets}) => (
+		<section data-status={status.toLowerCase()} data-devTools="status" class="status">
 			<h2>{status}</h2>
 			<Sets sets={sets} />
 		</section>
 	))}
+	</div>
 </Layout>

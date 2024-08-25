@@ -67,6 +67,64 @@ input, select, textarea {
 	}
 }
 
+button {
+	&[type="selectlist"] {
+		padding: 0.5em;
+		border-radius: 10px;
+	}
+}
+
+selectlist {
+	& listbox {
+		padding: 5px;
+		border-radius: 10px;
+		border-width: 0;
+	}
+
+	& .options-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-template-rows: repeat(auto-fit, 200px);
+		gap: 5px;
+	}
+
+	& option, & selectedoption {
+		text-align: center;
+		font-weight: 600;
+		height: 100%;
+		border-radius: 10px;
+		cursor: pointer;
+		gap: 2px;
+		line-height: 1;
+
+		& img {
+			width: 100%;
+			display: block;
+			height: 100%;
+			object-fit: cover;
+			overflow: hidden;
+			border-radius: 10px;
+		}
+	}
+
+	& option {
+		padding: 5px;
+
+		&:hover, &:focus {
+			background: var(--purple_bright);
+			color: var(--white);
+		}
+
+		&[hidden] {
+			display: none;
+		}
+	}
+
+	& selectedoption {
+		max-width: 150px;
+	}
+}
+
 body:not(.css_mode) {
 	& input {
 		&[type="range"] {
@@ -83,6 +141,37 @@ body:not(.css_mode) {
 					}
 				}
 			}
+		}
+	}
+
+	& selectlist {	
+		& .options-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+			grid-template-rows: repeat(auto-fit, 200px);
+			gap: 5px;
+		}
+	
+		& option, & selectedoption {
+			display: grid;
+			grid-template-rows: 1fr auto;
+		}
+	
+		& option {
+			padding: 5px;
+	
+			&:hover, &:focus {
+				background: var(--purple_bright);
+				color: var(--white);
+			}
+	
+			&[hidden] {
+				display: none;
+			}
+		}
+	
+		& selectedoption {
+			max-width: 150px;
 		}
 	}
 }
