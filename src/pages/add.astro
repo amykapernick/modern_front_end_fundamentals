@@ -77,20 +77,6 @@ if(Astro.request.method === 'POST') {
 			}
 		}
 	}
-
-	:global(body:not(.css_mode)) {
-		& .range {
-			display: grid;
-			grid-template-columns: 1fr auto;
-			grid-template-areas: 'range number' 'labels number';
-
-			& input{
-				&[type="number"] {
-					grid-area: number;
-				}
-			}
-		}
-	}
 </style>
 
 <Layout content={content}>

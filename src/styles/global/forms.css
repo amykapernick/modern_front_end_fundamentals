@@ -51,7 +51,7 @@ input, select, textarea {
 			white-space: break-spaces;
 			overflow-wrap: break-word;
 
-			option {
+			& option {
 				display: block;
 				width: 100%;
 				max-width: 100%;
@@ -141,6 +141,26 @@ body:not(.css_mode) {
 					}
 				}
 			}
+		}
+	}
+
+	& .range {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-areas: 'range number' 'labels number';
+
+		& input {
+			&[type="number"] {
+				grid-area: number;
+			}
+
+			&[type="range"] {
+				grid-area: range;
+			}
+		}
+
+		& datalist {
+			grid-area: labels;
 		}
 	}
 
