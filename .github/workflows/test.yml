@@ -1,21 +1,21 @@
 name: Build and Test
 
 on:
-	pull_request:
-		branches: [prod]
-		type: [opened, reopened, synchronize]
+  pull_request:
+    branches: [prod]
+    type: [opened, reopened, synchronize]
 
 jobs:
-	build:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Checkout Repo Code
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo Code
         uses: actions/checkout@v3
-	
-		  - name: Setup Node
+  
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
-	
-		  - name: Install Node Modules
+  
+      - name: Install Node Modules
         run: npm install
