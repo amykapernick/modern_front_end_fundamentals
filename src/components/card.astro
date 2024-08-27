@@ -120,7 +120,7 @@ const { id, name, category, tags = [], status } = Astro.props
 
 <div class="card" data-devTools="card">
 	<div class="img" data-devTools="img">
-		<img src={`/img/sets/${id}.jpg`} />
+		<img src={`/img/sets/${id}.jpg`} alt=`Photo of assembled lego set, ${name}` />
 	</div>
 	<span data-devTools="id" class="id">{id}</span>
 	<h3 data-devTools="name" class="name">

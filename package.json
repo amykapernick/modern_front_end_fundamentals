@@ -8,7 +8,8 @@
     "build": "astro build",
     "lint": "eslint -c ./config/eslint.config.mjs --fix",
     "ts": "tsc",
-    "clean": "rm -rf node_modules .asto dist"
+    "clean": "rm -rf node_modules .asto dist",
+    "test:update": "npx playwright test --update-snapshots"
   },
   "overrides": {
     "eslint-plugin-import": {
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.6.2",
+    "@axe-core/playwright": "^4.10.0",
     "astro": "^4.14.5",
     "dotenv": "^16.0.3",
     "file-system": "^2.2.2",
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0",
     "astro-eslint-parser": "^1.0.2",
     "eslint": "^9.9.0",
     "eslint-plugin-astro": "^1.2.3",
