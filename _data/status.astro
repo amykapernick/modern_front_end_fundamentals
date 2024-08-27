@@ -1,7 +1,37 @@
 <label for="field_status">Status</label>
-<select name="status" id="field_status">
+<!-- <select name="status" id="field_status">
 	<option value="Assembled">Assembled</option>
 	<option value="Stored">Stored</option>
 	<option value="Wishlist">Wishlist</option>
 	<option value="Unreleased">Unreleased</option>
-</select>
+</select> -->
+
+<selectlist>
+	<button type="selectlist">
+		<span class="sr-only">Select Tags</span>
+		<selectedoption></selectedoption>
+	</button>
+	<listbox>
+		<div class="options-container">
+			<option value="" hidden>
+				<span>Select Tags</span>
+			</option>
+			<option value="assembled">
+				<img src="/img/assembled.png" alt="">
+				<span class="text">Assembled</span>
+			</option>
+			<option value="stored">
+				<img src="/img/stored.jpg" alt="">
+				<span class="text">Stored</span>
+			</option>
+			<option value="wishlist">
+				<img src="/img/wishlist.png" alt="">
+				<span class="text">Wishlist</span>
+			</option>
+			<option value="unreleased">
+				<img src="/img/mystery.png" alt="">
+				<span class="text">Unreleased</span>
+			</option>
+		</div>
+	</listbox>
+</selectlist>

@@ -1,52 +1,144 @@
-<div>
-	<div>
+<header>
+	<nav>
 		<a href="#forms">Forms</a>
 		<a href="#media">Media</a>
 		<a href="#videos">Videos</a>
 		<a href="#other">Other</a>
-	</div>
-</div>
-<div id="main">
-	<div>
-		<h1>About Lego</h1>
-		<div data-devTools="content" class="content">
+	</nav>
+</header>
+<main id="main">
+	<article>
+		<header>
+			<h1>About Lego</h1>
+			<span>Author: Stolen from Lego Website</span>
+			<time datetime="2024-08-26">26 Aug 2024</time>
+		</header>
+		<section data-devTools="content" class="content">
+			<h2>History of Lego</h2>
+
+			<details name="faqs">
+				<summary>But why Lego?</summary>
+				<p>Because why not.</p>
+			</details>
+
 			<p>The name 'LEGO' is an abbreviation of the two Danish words "leg godt", meaning "play well". It's our name and it's our ideal.</p>
+
+			<img width="300" height="300" src="/img/logo.svg" alt="Lego Logo" />
 
 			<p>The LEGO Group was founded in 1932 by Ole Kirk Kristiansen. The company has since passed from generation to generation and is to this day still owned by the Kirk Kristiansen family.</p>
 			<p>Writing semantic HTML is the single best thing we as developers can do for accessibility</p>
 			<p>It has come a long way over the past 90 years - from a small carpenter's workshop to a modern, global enterprise that is now one of the world's largest manufacturers of toys.</p>
 			<p>The LEGO brick is our most important product. We are proud to have been named "Toy of the Century" twice. Our products have undergone extensive development over the years - but the foundation remains the traditional LEGO brick.</p>
 			<p>The brick in its present form was launched in 1958. The interlocking principle with its tubes makes it unique and offers unlimited building possibilities. It's just a matter of getting the imagination going - and letting a wealth of creative ideas emerge through play.</p>
-			<img width="300" height="300" src="/img/logo.svg" alt="Lego Logo" />
-		</div>
+		</section>
 
-		<div id="forms">
+		<section id="forms">
 			<h2>Forms and labels</h2>
 
 			<form id="form">
 				<label for="field_name">Full Name</label>
-				<input type="text" name="name" id="field_name" />
+				<input type="text" name="name" id="field_name" placeholder="Full Name" />
 				<label for="fdvbeUIPGBSDf">Email Address</label>
 				<input type="email" name="email" id="fdvbeUIPGBSDf" required />
 				<label>
 					Phone Number
 					<input type="tel" name="phone" required />
 				</label>
+
+				<label for="transport">What was your mode of transport?</label>
+				<input type="text" name="transport" id="transport" list="transport_methods" />
+				<datalist id="transport_methods">
+					<option value="Train">Train/Metro/Underground</option>
+					<option value="Bike" />
+					<option value="Motorbike" />
+					<option value="car" />
+					<option value="bus" />
+					<option value="boat">Boat/Ferry/Busboat</option>
+					<option value="walk" />
+				</datalist>
+
+				<label for="awesomeness">How much do you like Lego?</label>
+				<input type="range" max="10" value="7" step="1" id="awesomeness" list="lego_values" />
+				<datalist id="lego_values">
+					<option value="0">I stepped on Lego & it traumatised me</option>
+					<option value="5">It's ok, but I prefer puzzles</option>
+					<option value="10">I can't afford food, but I have Lego</option>
+				</datalist>
 			</form>
 
-		</div>
-		<div id="media">
+		</section>
+		<section id="media">
 			<h2>Media Items</h2>
 
+			<figure>
+				<img src="/img/image_600.jpg" alt="View of Vesuvius from the hill in Naples" />
+				<figcaption>Weekend in Italy, November 2022</figcaption>
+			</figure>
+
+			<picture>
+				<source srcset="/img/image_1200.jpg" media="(min-width: 1100px)" />
+				<source srcset="/img/image_900.jpg" media="(min-width: 900px)" />
+				<source srcset="/img/image_600.jpg" media="(min-width: 700px)" />
+				<source srcset="/img/image_300.jpg" media="(min-width: 400px)" />
+				<img src="/img/image_1200.jpg" alt="Image for demo purposes" />
+			</picture>
+
+			<picture>
+				<source srcset="/img/image_300.avif" type="image/avif" />
+				<source srcset="/img/image_300.webp" type="image/webp" />
+				<img src="/img/image_1200.jpg" alt="Image for demo purposes" />
+			</picture>
 
 			<h3 id="videos">Videos</h3>
 
+			<video controls muted loop>
+				<source src="/img/video.mp4" type="video/mp4" />
+				<track src="/img/subtitles.vtt" kind="captions" srclang="en-AU" default />
+			</video>
 
-		</div>
-		<div id="other">
+
+		</section>
+		<section id="other">
 			<h2>Other Fun Things</h2>
+			<h3>FAQs</h3>
+			<details name="faqs">
+				<summary>Are Quokkas real?</summary>
+				<div>
+					<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
+					<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
+				</div>
+			</details>
 
-		</div>
-	</div>
-</div>
-<div id="footer">&copy; 2023</div>
+			<details name="faqs">
+				<summary>Can I have one?</summary>
+				<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
+			</details>
+
+			<h3>Dialog</h3>
+
+			<dialog>
+				<p>Hello there!</p>
+				<button>Close</button>
+			</dialog>
+			<button>Open Dialog</button>
+
+			<script>
+				const dialog = document.querySelector("dialog");
+				const showButton = document.querySelector("dialog + button");
+				const closeButton = document.querySelector("dialog button");
+
+				// "Show the dialog" button opens the dialog modally
+				showButton.addEventListener("click", () => {
+					dialog.showModal();
+				});
+
+				// "Close" button closes the dialog
+				closeButton.addEventListener("click", () => {
+					dialog.close();
+				});
+			</script>
+
+		</section>
+	</article>
+</main>
+<footer id="footer">&copy; 2023</footer>
