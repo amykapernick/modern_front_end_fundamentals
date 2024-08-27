@@ -20,6 +20,7 @@ jobs:
       - name: Install Node Modules
         run: npm install
 
+        # TODO: fix this, it doesn't work
       - name: Build Site
         uses: South-Paw/action-netlify-cli@v2
         with:
