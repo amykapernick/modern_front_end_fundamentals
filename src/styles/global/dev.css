@@ -34,7 +34,7 @@ body {
 			outline-offset: -3px;
 		}
 
-		&[data-devTools="sets"] {
+		&[data-devTools="sections"] {
 			--colour: $blue;
 		}
 

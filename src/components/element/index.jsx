@@ -68,6 +68,8 @@ const Element = (props) => {
 
 	useEffect(() => {
 		const dialog = document.querySelector('dialog')
+
+		if(!dialog) return
 		
 		if(open) dialog.showModal()
 		else dialog.close()
@@ -85,7 +87,7 @@ const Element = (props) => {
 			<span className={styles.votes}>{votes}</span>
 			<a href={mdn} target="_blank">MDN Reference</a>
 			<a href={html} target="_blank">HTML Reference</a>
-			{example &&
+			{false &&
 				<>
 					<button className={styles.link} onClick={openExample}>View Example</button>
 					<dialog className={styles.dialog}>

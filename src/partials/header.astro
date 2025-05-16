@@ -1,53 +1,6 @@
 ---
 import Logo from '@img/fundamentals.svg?url'
-
-const menuItems = [
-  {
-	label: 'Home',
-	link: '/',
-  },
-  {
-	label: 'Sets',
-	items: [
-		{
-			label: 'Assembled',
-			link: '/assembled'
-		},
-		{
-			label: 'Wishlist',
-			link: '/wishlist'
-		},
-		{
-			label: 'Unreleased',
-			link: '/unreleased'
-		},
-		{
-			label: 'Stored',
-			link: '/stored'
-		},
-		{
-			label: 'All',
-			link: '/sets'
-		}
-	]
-  },
-  {
-	label: 'Lego Store',
-	link: 'https://lego.com.au/'
-  },
-  {
-	label: 'About',
-	link: '/about'
-  },
-  {
-	label: 'HTML Elements',
-	link: '/html'
-  },
-  {
-	label: 'Add Set',
-	link: '/add'
-  }
-]; 
+import sections from '@data/sections.json'
 ---
 
 <style>
@@ -103,7 +56,7 @@ const menuItems = [
 
 	:global(body:not(.css_mode)) {
 		& header {
-			justify-content: center;
+			justify-content: space-evenly;
 			align-items: center;
 		}
 
@@ -185,16 +138,6 @@ const menuItems = [
 	}
 </style>
 
-<script>
-	const menuSections = document.querySelectorAll('.menu_section');
-
-	menuSections.forEach(section => {
-		section.addEventListener('click', () => {
-			section.nextElementSibling?.classList.toggle('open');
-		})
-	})
-</script>
-
 <header data-testid="header" class="header" data-devTools="header" id="header">
 	<a href="/" class="title" id="a">
 		<img src={Logo} alt="" />
@@ -202,33 +145,13 @@ const menuItems = [
 	</a>
 	<nav>
 		<ul class="menu" data-devTools="menu">
-			{menuItems.map(({label, link, items}) => (
+			{sections.map(({slug, name}) => (
 				<li class="menu_item" data-devTools="menu_item">
-					{items ? 
-						<>
-							<button class="menu_section">{label}</button>
-							<ul class="sub">
-								{
-									items.map(item => (
-										<li>
-											<a 
-												href={item.link}
-												target={item.link.startsWith('http') ? '_blank' : '_self'}
-											>
-												{item.label}
-											</a>
-										</li>
-									))
-								}
-							</ul>
-						</> : 
-						<a 
-							href={link}
-							target={link.startsWith('http') ? '_blank' : '_self'}
-						>
-							{label}
-						</a>
-					}	
+					<a 
+						href={`/${slug}`}
+					>
+						{name}
+					</a>	
 				</li>
 			))}
 		</ul>

@@ -1,24 +1,7 @@
 ---
 import Layout from '@layouts/default';
-import allSets from '@data/sets.json'
-import Sets from '@partials/sets';
-
-let statuses = {}
-
-Object.entries(allSets).forEach(([id, props]) => {
-	const status = props.status.toLowerCase().replace(/\s/g, '-')
-	if(!statuses[status]) {
-		statuses[status] = {
-			status: props.status,
-			sets: []
-		}
-	}
-
-	statuses[status].sets.push({
-		id,
-		...props
-	})
-})
+import sections from '@data/sections.json'
+import Sections from '@partials/sections';
 
 ---
 
@@ -37,12 +20,5 @@ Object.entries(allSets).forEach(([id, props]) => {
 
 <Layout>
 	<h1>Modern Fun-damentals</h1>
-	<div class="statuses" data-devTools="statuses">
-		{Object.values(statuses).map(({status, sets}) => (
-		<section data-status={status.toLowerCase()} data-devTools="status" class="status">
-			<h2>{status}</h2>
-			<Sets sets={sets} />
-		</section>
-	))}
-	</div>
+	<Sections sections={sections} />
 </Layout>

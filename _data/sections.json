@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Semantic HTML",
+    "slug": "semantic-html"
+  },
+  {
+    "name": "Modern CSS Layouts",
+    "slug": "modern-css-layouts"
+  },
+  {
+    "name": "Accessibility Testing",
+    "slug": "accessibility-testing"
+  },
+  {
+    "name": "Snapshot Testing",
+    "slug": "snapshot-testing"
+  },
+  {
+    "name": "UI Testing",
+    "slug": "ui-testing"
+  },
+  {
+    "name": "GitHub Actions",
+    "slug": "github-actions"
+  }
+]
