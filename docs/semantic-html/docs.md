@@ -6,8 +6,8 @@ title: Semantic HTML
 - [`header`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header) - for the header section of a page or article, encompassing items such as the title, search bar or navigation
 - [`footer`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer) - for the footer section of a page or article, encompassing items such as the author information, copyright data or related pages and files
 - [`main`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main) - the main content of the page and dominant content of the `body`
-- [`article`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article) - a self contained piece of content which makes complete sense on it’s own without any of the other page content
-- [`section`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section) - a generic standalone section that doesn’t meet another element, with at least one heading inside
+- [`article`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article) - a self contained piece of content which makes complete sense on it's own without any of the other page content
+- [`section`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section) - a generic standalone section that doesn't meet another element, with at least one heading inside
 - [`nav`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav) - contains the navigational links to other pages or within the current page
 - [`aside`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) - a section of the page that is indirectly related to the main content, likely presented as a sidebar or callout box
 
@@ -37,7 +37,7 @@ When adding fields to a form, we need to add labels to let users and assistive t
 
 ### 1.2.2 Datalists
 
-There’s a special type of form input called a [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), which allows users to type in a text field and have the options be autofilled from a list of predefined options.
+There's a special type of form input called a [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), which allows users to type in a text field and have the options be autofilled from a list of predefined options.
 
 ```html
 <label for="aussie_animals">
@@ -74,7 +74,7 @@ In a form we often want to get a value from a particular range (eg. somewhere be
 />
 ```
 
-To make it easier for people to know what value they’re supplying, we can provide labels using the `datalist` element to provide labels to display along the slider. These labels don’t necessarily have to correspond with each step/point on the slider, but it’s best if they’re equally spaced. The `value` of each option should correspond the the value from the range slider, eg. in this case it’s going from 0 to 10.
+To make it easier for people to know what value they're supplying, we can provide labels using the `datalist` element to provide labels to display along the slider. These labels don't necessarily have to correspond with each step/point on the slider, but it's best if they're equally spaced. The `value` of each option should correspond the the value from the range slider, eg. in this case it's going from 0 to 10.
 
 ```html
 <label for="quokka_coolness">How cool are Quokkas?</label>
@@ -117,19 +117,19 @@ Using the [`figure` element](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 </figure>
 ```
 
-The `figure` and `figcaption` element isn’t just for images either, it can be used for a variety of other media types (eg. audio and video).
+The `figure` and `figcaption` element isn't just for images either, it can be used for a variety of other media types (eg. audio and video).
 
 ### 1.3.3 Picture Element
 
 The [`picture` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture) allows us to serve different image files depending on the size of the screen and capabilities of the browser.
 
-The element also allows us to provide a fallback in case the source queries aren’t met, to display a regular image.
+The element also allows us to provide a fallback in case the source queries aren't met, to display a regular image.
 
 #### 1.3.3.1 Different Image sizes
 
 We can define different media queries and the image file to use, depending on the size of the screen the site will load a different image size. Any attributes added to the fallback `img` element are then passed on to whichever is being rendered, eg. the `alt` attribute set there will be used regardless of the image source being rendered
 
-The browser steps through each of the `source` elements until it finds one that matches, then it stops (similar to an `if/else` statement). If you’re using `min-width` for your media queries that means you need to list the biggest one first and vice-versa for `max-width`.
+The browser steps through each of the `source` elements until it finds one that matches, then it stops (similar to an `if/else` statement). If you're using `min-width` for your media queries that means you need to list the biggest one first and vice-versa for `max-width`.
 
 ```html
 <picture>
@@ -171,7 +171,7 @@ The same as checking for the size of the screen, we can check the capabilities o
 
 One commonly overlooked set of elements are the [`map`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) and [`area`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area) elements. These are used to create a clickable image/infographic, defining clickable areas over the top of an image. The map is linked to an image through the `name` and `usemap` attributes, and the `area` elements have fixed coordinates for their boundaries
 
-This method isn’t overly responsive as the image must be a fixed size and the method is mostly replaced by SVG use.
+This method isn't overly responsive as the image must be a fixed size and the method is mostly replaced by SVG use.
 
 ```html
 <img 
@@ -220,7 +220,7 @@ This method isn’t overly responsive as the image must be a fixed size and the 
 
 Using the [`video` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video), we can load a video file on the page, using browser native features and getting access to video controls.
 
-The element has various attributes to set whether there are controls, if the video loops, if the video is automatically muted and more. You can also provide HTML for a fallback (similar to the picture element), so that if the browser doesn’t support it the users are aware.
+The element has various attributes to set whether there are controls, if the video loops, if the video is automatically muted and more. You can also provide HTML for a fallback (similar to the picture element), so that if the browser doesn't support it the users are aware.
 
 ```html
 <video
@@ -242,9 +242,9 @@ Similarly to adding `alt` text to an image, we can add a text alternative to vid
 
 - **Subtitles**: provide translation, eg. into another language and may contain additional content like extra background information
 - **Captions**: provide a transcription of the audio and may include important non-verbal information, an alternative for no sound or users who are deaf, this may be in another language to the video
-- **Descriptions**: provides a text description of the video, for users who are blind or when the video can’t be seen. This may be available in different languages and won’t be relevant for audio files.
+- **Descriptions**: provides a text description of the video, for users who are blind or when the video can't be seen. This may be available in different languages and won't be relevant for audio files.
 
-Whichever of these text alternatives we’re using (we can include multiple), we can link the file to a video or audio file using the [`track` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track). This allows us to define the file (or specify multiple files in different languages) to allow users to enable it on the media.
+Whichever of these text alternatives we're using (we can include multiple), we can link the file to a video or audio file using the [`track` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track). This allows us to define the file (or specify multiple files in different languages) to allow users to enable it on the media.
 
 ```html
 <video
@@ -321,7 +321,7 @@ Newly introduced in 2023, the `name` attribute can be added to a group of collap
 
 ### 1.4.3 Addresses
 
-You can use the [`address` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address) to provide a more semantic wrapper around address details. This isn’t limited to physical location addresses, but can also be used for email addresses and phone numbers as well.
+You can use the [`address` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address) to provide a more semantic wrapper around address details. This isn't limited to physical location addresses, but can also be used for email addresses and phone numbers as well.
 
 ```html
 <address>    

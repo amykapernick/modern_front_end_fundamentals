@@ -4,7 +4,7 @@ title: Modern CSS
 
 ## 2.1 Flexbox
 
-[Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout), using the `display: flex` property allows laying out and re-ordering it’s children. This comes along with a bunch of [different properties](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), and is really useful for laying items out in a flowing direction. 
+[Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout), using the `display: flex` property allows laying out and re-ordering it's children. This comes along with a bunch of [different properties](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), and is really useful for laying items out in a flowing direction. 
 
 ```css
 .container {
@@ -54,7 +54,7 @@ When there are more items than fit in one row, they will overflow by default. Yo
 
 ### 2.1.4 Growing and Shrinking Items
 
-By default flex items will adjust size where necessary, growing and shrinking as defined. The [`flex-grow`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) and [`flex-shrink`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) property defines if an item will grow or shrink by giving it a positive number, any additional space is then allocated/removed depending on the value (eg. an item with a `flex-grow` value of `4` will get four times as much space as one with a value of `1`). The [`flex-basis`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis) property defines the initial size of an item (by default it’ll inherit the item width, or you can give it a pixel value).
+By default flex items will adjust size where necessary, growing and shrinking as defined. The [`flex-grow`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow) and [`flex-shrink`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink) property defines if an item will grow or shrink by giving it a positive number, any additional space is then allocated/removed depending on the value (eg. an item with a `flex-grow` value of `4` will get four times as much space as one with a value of `1`). The [`flex-basis`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis) property defines the initial size of an item (by default it'll inherit the item width, or you can give it a pixel value).
 
 ![https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flex-grow](./img/Untitled%202.png)
 
@@ -72,7 +72,7 @@ Flexbox is useful for vertically centring content, like aligning labels next to 
 
 ### 2.1.6 Ordering Items
 
-We can change the order the flex children appear on the page without changing their source order using the [`order`](https://developer.mozilla.org/en-US/docs/Web/CSS/order) property. By default each item has an implicit value of `0`, a negative number will bring it to the start and a positive number will put it at the end. Based on these numbers they’ll then be sorted.
+We can change the order the flex children appear on the page without changing their source order using the [`order`](https://developer.mozilla.org/en-US/docs/Web/CSS/order) property. By default each item has an implicit value of `0`, a negative number will bring it to the start and a positive number will put it at the end. Based on these numbers they'll then be sorted.
 
 ![https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-order](./img/Untitled%203.png)
 
@@ -134,7 +134,7 @@ There is a new responsive unit as part of CSS Grid as well, the [`fr`](https://d
 
 To automate the layout further, we can use the [`auto-fit` and `auto-fill` properties](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-the-repeat-function-and-keywords) to [create columns depending](https://codepen.io/SaraSoueidan/pen/JrLdBQ) on the screen size:
 
-- [`auto-fill`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill): Create as many columns as it can fit, even if there’s not enough grid-items
+- [`auto-fill`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill): Create as many columns as it can fit, even if there's not enough grid-items
 - [`auto-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit): Create as many columns as it can fit, but no more than the number of grid items
 
 ![https://codepen.io/SaraSoueidan/pen/JrLdBQ](./img/Untitled%204.png)
@@ -166,7 +166,7 @@ Similar to flexbox, to add a gap between the items, the [`column-gap` and `row-g
 
 ### 2.2.3 Grid Areas
 
-As well as auto-allocating items to spots on the grid, we can define areas and assign elements manually for greater control. Using the [`grid-template-areas`](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-template-areas) property we can add name labels to the different areas of the grid, these can spread across different sections to form a larger area. The definition of these areas is fairly forgiving on white space, so it’s good practice to line these up to easier visualise the grid layout. Each row is a separate string inside quotes and each column is separated by at least one space, with any string value being a valid area name (even emojis).
+As well as auto-allocating items to spots on the grid, we can define areas and assign elements manually for greater control. Using the [`grid-template-areas`](https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-template-areas) property we can add name labels to the different areas of the grid, these can spread across different sections to form a larger area. The definition of these areas is fairly forgiving on white space, so it's good practice to line these up to easier visualise the grid layout. Each row is a separate string inside quotes and each column is separated by at least one space, with any string value being a valid area name (even emojis).
 
 ```css
 .container {
@@ -192,7 +192,7 @@ Once the areas are named, you can assign items to the areas using the [`grid-are
 
 ### 2.2.4 Styling Fallbacks
 
-If you’re having to support [older browsers that don’t support](https://caniuse.com/css-grid) CSS Grid, you can use the [`@supports` query](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) to check for browser support first, and use flexbox or another layout method.
+If you're having to support [older browsers that don't support](https://caniuse.com/css-grid) CSS Grid, you can use the [`@supports` query](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports) to check for browser support first, and use flexbox or another layout method.
 
 ```css
 @supports(grid-template-columns: 20px) {

@@ -34,7 +34,7 @@ Choose one of the images below and add it to the page with appropriate alt text.
 
 ### 1.3.2 Figures and Captions
 
-Add a figure element around our image and give it a caption for people to see. The caption doesn’t need to describe the image but should be an add-on to it.
+Add a figure element around our image and give it a caption for people to see. The caption doesn't need to describe the image but should be an add-on to it.
 
 ### 1.3.3 Picture Element
 
@@ -49,7 +49,7 @@ Add a `picture` element to service the following images (in order, smallest to w
 
 #### 1.3.3.4 Different Image Formats
 
-Add new file formats to the `picture` element, `avif` should be rendered if it’s supported, otherwise `webp` and `jpg` if those aren’t supported. There’s some additional images to use:
+Add new file formats to the `picture` element, `avif` should be rendered if it's supported, otherwise `webp` and `jpg` if those aren't supported. There's some additional images to use:
 
 - https://assets.codepen.io/707165/image_300.webp
 - https://assets.codepen.io/707165/image_600.webp
@@ -60,7 +60,7 @@ Add new file formats to the `picture` element, `avif` should be rendered if it�
 - https://assets.codepen.io/707165/image_900.avif
 - https://assets.codepen.io/707165/image_1200.avif
 
-**Note**: Normally the picture element is used to render different sizes/formats of the same image, we’re just using different images here to make it easier to see the different images being loaded in.
+**Note**: Normally the picture element is used to render different sizes/formats of the same image, we're just using different images here to make it easier to see the different images being loaded in.
 
 ### 1.3.4 Image Maps
 
@@ -74,7 +74,7 @@ Add a `video` to the page, inside a `figure` element, with a fallback linking to
 
 #### 1.3.5.1 Subtitles, Captions and Descriptions
 
-Add a captions track to the video, these are in British/Australian English. You’ll also have to add the `crossorigin` attribute to the `video` element to get them to load in to the Codepen (this may or may not be needed when you use this elsewhere).
+Add a captions track to the video, these are in British/Australian English. You'll also have to add the `crossorigin` attribute to the `video` element to get them to load in to the Codepen (this may or may not be needed when you use this elsewhere).
 
 - https://assets.codepen.io/707165/subtitles.vtt
 

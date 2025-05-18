@@ -20,7 +20,7 @@ On the [homepage](/), use flexbox to align the section cards next to one another
 
 ### 2.1.4 Growing and Shrinking Items
 
-Align the cards and make sure they’re at least 200px wide but will stretch/shrink as required.
+Align the cards and make sure they're at least 200px wide but will stretch/shrink as required.
 
 ### 2.1.5 Vertical Centring
 
@@ -38,7 +38,7 @@ Use the order property to change the order of the sections so that the current s
 
 Define a CSS Grid layout for the homepage, there should be equal width columns.
 
-*Hint*: Keep the flexbox code there, we’ll use it later, but comment it out for now
+*Hint*: Keep the flexbox code there, we'll use it later, but comment it out for now
 
 #### 2.2.1.3 Automatic Columns and Rows
 
