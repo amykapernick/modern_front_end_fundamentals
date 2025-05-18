@@ -182,16 +182,6 @@ nav {
 	}
 }
 
-.content {
-	clear: right;
-	overflow: hidden;
-
-	img {
-		float: right;
-		margin: 0.5em 0 0.5em 20px;
-	}
-}
-
 selectedoption {
 	background: chartreuse;
 }

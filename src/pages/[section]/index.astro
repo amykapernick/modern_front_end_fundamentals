@@ -1,0 +1,66 @@
+---
+import Layout from '@layouts/default'
+import sections from '@data/sections.json'
+
+export const prerender = true;
+
+export function getStaticPaths() {
+	return sections.map((section) => ({
+		params: {
+			section: section.slug
+		},
+		props: {
+			...section,
+		}
+	}))
+}
+
+const { section } = Astro.params;
+const { name } = Astro.props;
+const content = {
+	title: `${name} | Modern Fun-damentals`,
+}
+---
+
+<style>
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: 1.5em;
+	}
+
+	a {
+		display: block;
+		background: var(--purple);
+		color: var(--white);
+		padding: 0.1em 0.5em;
+		text-decoration: none;
+		border-radius: 0.5em;
+
+		&:hover {
+			background: var(--white);
+			color: var(--purple);
+		}
+	}
+</style>
+
+<Layout content={content}>
+	<h1>{name}</h1>
+	<ul>
+		<li>
+			<a href={`/${section}/docs`} class="docs">
+				🔗 Docs
+			</a>
+		</li>
+		<li>
+			<a href={`/${section}`} class="exercises">
+				🔗 Exercises	
+			</a>
+		</li>
+	</ul>
+</Layout>
+

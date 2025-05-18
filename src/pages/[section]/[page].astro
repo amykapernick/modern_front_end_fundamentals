@@ -1,0 +1,105 @@
+---
+import Layout from '@layouts/default'
+
+export const prerender = true;
+
+export function getStaticPaths() {
+	const sections = Object
+		.values(import.meta.glob('../../../docs/**/*.md', { eager: true }))
+		.map((data) => {
+			const {section, page} = data.file.match(/docs\/(?<section>[^/]+)\/(?<page>[^/]+)\.md$/).groups;
+
+			return ({
+				...data,
+				frontmatter: {
+					...data.frontmatter,
+					section,
+					page,
+					pageName: page === 'docs' ? 'Docs' : 'Exercises'
+				},
+			})
+		});
+
+	return sections.map((section) => ({
+		params: {
+			...section.frontmatter
+		},
+		props: {
+			...section,
+		}
+	}))
+}
+
+const { section, page } = Astro.params;
+const { frontmatter: { title, pageName }, Content } = Astro.props;
+const content = {
+	title: `${pageName} | ${title}`
+}
+---
+
+<style>
+	header {
+		display: grid;
+		grid-template-areas: '. section' 'title title' 'link .';
+		grid-template-columns: 1fr auto;
+	}
+
+	.section {
+		grid-area: section;
+		color: var(--purple_bright);
+		font-family: $font_heading;
+		font-size: 2em;
+		font-weight: 700;
+	}
+
+	h1 {
+		grid-area: title;
+	}
+
+	.link {
+		grid-area: link;
+		text-decoration: none;
+		background: var(--purple);
+		color: var(--white);
+		display: inline-block;
+		padding: 0.1em 0.5em;
+		font-size: 1.2em;
+		width: auto;
+		justify-self: start;
+		align-self: center;
+		border-radius: 0.5em;
+
+		&:hover {
+			background: var(--white);
+			color: var(--purple);
+		}
+	}
+
+	.content {
+		& :global(p:has(img:first-child + img:last-child)),
+		& :global(p:has(img:first-child:last-child)) {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			width: 100%;
+			justify-content: space-around;
+		}
+
+		& :global(img) {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+</style>
+
+<Layout content={content}>
+	<header>
+		<h1>{pageName}</h1>
+		<span class="section">{title}</span>
+		<a href={`/${section}/${page === 'docs' ? 'exercises' : 'docs'}`} class="link">🔗 {page === 'docs' ? 'Exercises' : 'Docs'}</a>
+	</header>
+	<div class="content">
+		<Content />
+	</div>
+</Layout>
+

@@ -6,8 +6,8 @@ const { sections } = Astro.props
 
 <style>
 	.sections {
-		margin: 0;
-		padding: 0;
+		margin: 10px;
+		padding: 10px;
 		list-style: none;
 	}
 
@@ -40,7 +40,7 @@ const { sections } = Astro.props
 <ul class="sections" data-devTools="sections">
 	{sections
 		.map((props, i) => (
-		<li class="item" data-devTools="item">
+		<li class="item" data-devTools="item" data-section={`${i + 1}.0`}>
 			<Card {...props} name={`${i + 1}.0 - ${props.name}`} />
 		</li>
 	))}
