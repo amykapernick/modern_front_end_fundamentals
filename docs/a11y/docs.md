@@ -1,5 +1,5 @@
 ---
-name: Accessibility
+title: Accessibility
 ---
 
 For Accessibility testing, some of it can be automated but some tests must be conducted manually. There are plenty of manual tests that can easily be run with little or no experience in the accessibility field.
@@ -26,11 +26,11 @@ One of the best tools for checking this is the browser dev tools, which will giv
 
 Colour contrast is easy to achieve when it's done at the initial design stages, and tools like [Accessible Brand Colors](https://abc.useallfive.com/?colors[]=318CE7,9440A0,64AD66,7561C1,E53F51,FFCE03,364C93,F7F0EB,191919) allow comparing all brand colours to find acceptable combinations
 
-[![[Accessible Brand Colors by Use All Five](https://abc.useallfive.com/?colors[]=318CE7,9440A0,64AD66,7561C1,E53F51,FFCE03,364C93,F7F0EB,191919)](./img/Untitled_a11y%201.png)](https://abc.useallfive.com/?colors[]=318CE7,9440A0,64AD66,7561C1,E53F51,FFCE03,364C93,F7F0EB,191919)
+[![](./img/Untitled_a11y%201.png)](https://abc.useallfive.com/?colors[]=318CE7,9440A0,64AD66,7561C1,E53F51,FFCE03,364C93,F7F0EB,191919)
 
 Just because a colour combination passes that also doesn't mean it's a good combination to use, for example people with various types of colour blindness or vision impairments may have issues as they view the colours differently, [WhoCanUse](https://www.whocanuse.com/?bg=b8192a&fg=bfdfbf&fs=16&fw=) simulates various types of vision impairments and tests the colour contrast of them as well to make sure that it's good for everyone.
 
-[![[WhoCanUse](https://www.whocanuse.com/?bg=b8192a&fg=bfdfbf&fs=16&fw=)](./img/Untitled_a11y%202.png)](https://www.whocanuse.com/?bg=b8192a&fg=bfdfbf&fs=16&fw=)
+[![](./img/Untitled_a11y%202.png)](https://www.whocanuse.com/?bg=b8192a&fg=bfdfbf&fs=16&fw=)
 
 ## 3.3 Keyboard Accessibility
 
@@ -85,7 +85,7 @@ There are a lot of accessibility issues that need to be tested manually, and vet
 
 Pa11y can be run as a [CLI tool](https://github.com/pa11y/pa11y#command-line-interface) or a [JavaScript](https://github.com/pa11y/pa11y#javascript-interface) package, for now we're going to use the JavaScript option as it gives us a bit more control. The package gives us an async function, we can pass the site URL to it and have it run the tests on the website.
 
-```jsx
+```js
 const pa11y = require('pa11y');
 
 pa11y('https://mywebsite.com')
@@ -96,8 +96,6 @@ pa11y('https://mywebsite.com')
 		console.log({ err });
 	})
 ```
-
-We can also save the results to a file and make it easier to read through and access them using the `file-system` package.
 
 #### 3.7.1.1 Interpreting Pa11y Results
 
@@ -125,7 +123,7 @@ The important parts of this error message are just four of these properties, whi
 
 If we need to find more information, we can search for the error code in the WCAG standards, to find more information about how to fix it.
 
-[![[squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2](http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2)](./img/Untitled_a11y%209.png)](http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2)
+[![](./img/Untitled_a11y%209.png)](http://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2)
 
 #### 3.7.1.2 Pa11y Configuration
 

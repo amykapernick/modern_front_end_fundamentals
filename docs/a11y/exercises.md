@@ -1,5 +1,5 @@
 ---
-name: Accessibility
+title: Accessibility
 ---
 
 ## 3.2 Colour Contrast
@@ -29,27 +29,7 @@ Watch [this video of someone using a screen reader](https://youtu.be/WSEe2zxjslw
 
 ### 3.7.1 Pa11y
 
-Create a pa11y test that runs against the local server (will probably be http://localhost:3000) and logs the results to the console.
-
-We can also save the results to a file and make it easier to read through and access them using the `file-system` package.
-
-```jsx
-const pa11y = require('pa11y');
-const fs = require('file-system')
-
-pa11y('https://mywebsite.com')
-	.then((results) => {
-		fs.writeFileSync(
-			`results.json`, 
-			JSON.stringify(res, null, 4)
-		)
-	})
-	.catch((err) => {
-		console.log({ err });
-	})
-```
-
-Update the test to save the results in a JSON file in the tests/a11y/results folder.
+Create a pa11y test that runs against the local server and logs the results to the console.
 
 #### 3.7.1.1 Interpreting Pa11y Results
 
