@@ -18,20 +18,20 @@ title: Semantic HTML
 When adding fields to a form, we need to add labels to let users and assistive technologies (like screen readers) know what the field is for. We can do this using the [`label` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label), which not only provides a nice description for the input, we can specify that the input and label are linked and relate to one another using the `id` and `for` attributes.
 
 ```html
-<form>	
-	<label for="name">What is the Quokka's name</label>
-	<input type="text" name="quokka_name" id="name" />
+<form>  
+  <label for="name">What is the Quokka's name</label>
+  <input type="text" name="quokka_name" id="name" />
 
-	<fieldset>
-		<legend>Do you like Quokkas?</legend>
+  <fieldset>
+    <legend>Do you like Quokkas?</legend>
 
-		<input type="radio" name="like_quokkas" value="Yes" id="yes" />
-		<label for="yes">Yes, I like Quokkas</label>
+    <input type="radio" name="like_quokkas" value="Yes" id="yes" />
+    <label for="yes">Yes, I like Quokkas</label>
 
-		<input type="radio" name="like_quokkas" value="No" id="no" />
-		<label for="no">No, I do not like Quokkas</label>
+    <input type="radio" name="like_quokkas" value="No" id="no" />
+    <label for="no">No, I do not like Quokkas</label>
 
-	</fieldset>
+  </fieldset>
 </form>
 ```
 
@@ -40,23 +40,23 @@ When adding fields to a form, we need to add labels to let users and assistive t
 There's a special type of form input called a [`datalist`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), which allows users to type in a text field and have the options be autofilled from a list of predefined options.
 
 ```html
-<label for="aussie_animals">
-	Which Australian animal do you think is the best?
-</label>
-<input 
-	type="text" 
-	list="animals" 
-	id="aussie_animals" 
-	name="best_animal" 
-/>
-<datalist id="animals">    
-	<option value="Quokka" />    
-	<option value="Koala" />    
-	<option value="Platypus" />    
-	<option value="Echidna" />    
-	<option value="Kangaroo" />    
-	<option value="Camel" />
-</datalist>
+  <label for="aussie_animals">
+    Which Australian animal do you think is the best?
+  </label>
+  <input 
+    type="text" 
+    list="animals" 
+    id="aussie_animals" 
+    name="best_animal" 
+  />
+  <datalist id="animals">    
+    <option value="Quokka" />    
+    <option value="Koala" />    
+    <option value="Platypus" />    
+    <option value="Echidna" />    
+    <option value="Kangaroo" />    
+    <option value="Camel" />
+  </datalist>
 ```
 
 ### 1.2.3 Range Sliders
@@ -66,11 +66,11 @@ In a form we often want to get a value from a particular range (eg. somewhere be
 ```html
 <label for="quokka_coolness">How cool are Quokkas?</label>
 <input 
-	type="range" 
-	name="coolness"
-	id="quokka_coolness" 
-	max="10" 
-	step="1" 
+  type="range" 
+  name="coolness"
+  id="quokka_coolness" 
+  max="10" 
+  step="1" 
 />
 ```
 
@@ -79,17 +79,17 @@ To make it easier for people to know what value they're supplying, we can provid
 ```html
 <label for="quokka_coolness">How cool are Quokkas?</label>
 <input 
-	type="range" 
-	name="coolness"
-	id="quokka_coolness" 
-	max="10" 
-	step="1" 
-	list="quokka_coolness_list"
+  type="range" 
+  name="coolness"
+  id="quokka_coolness" 
+  max="10" 
+  step="1" 
+  list="quokka_coolness_list"
 />
 <datalist id="quokka_coolness_list">
-	<option value="0">Not at all cool</option>
-	<option value="5">Moderately cool</option>
-	<option value="10">Coolest animal ever</option>
+  <option value="0">Not at all cool</option>
+  <option value="5">Moderately cool</option>
+  <option value="10">Coolest animal ever</option>
 </datalist>
 ```
 
@@ -101,8 +101,8 @@ We can use the [`alt`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 
 ```html
 <img 
-	src="/img/rottnest.jpg" 
-	alt="Rottnest Island in Western Australia, with white sandy beach and the clear blue water dotted with small rocky reef sections along the edge" 
+  src="/img/rottnest.jpg" 
+  alt="Rottnest Island in Western Australia, with white sandy beach and the clear blue water dotted with small rocky reef sections along the edge" 
 />
 ```
 
@@ -112,8 +112,8 @@ Using the [`figure` element](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 
 ```html
 <figure>
-	<img src="/img/rottnest.jpg" />
-	<figcaption>Rottnest Island, WA</figcaption>
+  <img src="/img/rottnest.jpg" />
+  <figcaption>Rottnest Island, WA</figcaption>
 </figure>
 ```
 
@@ -133,19 +133,19 @@ The browser steps through each of the `source` elements until it finds one that 
 
 ```html
 <picture>
-	<source
-		srcset="/img/rottnest-900_x_500.jpg"
-		media="(min-width: 900px)"    
-	/>     
-	<source        
-		srcset="/img/rottnest-400_x_300.jpg"        
-		media="(min-width: 600px)"    
-	/>     
-	<source        
-		srcset="/img/rottnest-200_x_150.jpg"        
-		media="(min-width: 400px)"    
-	/>    
-	<img src="/img/rottnest.jpg" alt="" />
+  <source
+    srcset="/img/rottnest-900_x_500.jpg"
+    media="(min-width: 900px)"    
+  />     
+  <source        
+    srcset="/img/rottnest-400_x_300.jpg"        
+    media="(min-width: 600px)"    
+  />     
+  <source        
+    srcset="/img/rottnest-200_x_150.jpg"        
+    media="(min-width: 400px)"    
+  />    
+  <img src="/img/rottnest.jpg" alt="" />
 </picture>
 ```
 
@@ -155,15 +155,15 @@ The same as checking for the size of the screen, we can check the capabilities o
 
 ```html
 <picture>
-	<source        
-		srcset="/img/rottnest.avif"        
-		type="image/avif"    
-	/>    
-	<source        
-		srcset="/img/rottnest.webp"        
-		type="image/webp"    
-	/> 
-	<img src="/img/rottnest.jpg" />
+  <source        
+    srcset="/img/rottnest.avif"        
+    type="image/avif"    
+  />    
+  <source        
+    srcset="/img/rottnest.webp"        
+    type="image/webp"    
+  /> 
+  <img src="/img/rottnest.jpg" />
 </picture>
 ```
 
@@ -175,44 +175,44 @@ This method isn't overly responsive as the image must be a fixed size and the me
 
 ```html
 <img 
-	src="https://assets.codepen.io/707165/Layout+Map.png" 
-	width="540" 
-	height="540"
-	usemap="#image_map"
+  src="https://assets.codepen.io/707165/Layout+Map.png" 
+  width="540" 
+  height="540"
+  usemap="#image_map"
 />
 <map name="image_map">
-	<area 
-		alt="Header Section" 
-		title="header" 
-		href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" 
-		target="_blank" 
-		coords="0,0,540,100" 
-		shape="rect" 
-	/>
-	<area 
-		alt="Content Section"
-		title="main" 
-		href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main" 
-		target="_blank" 
-		coords="79,100,540,488.5" 
-		shape="rect" 
-	/>
-	<area 
-		alt="Sidebar Section" 
-		title="aside" 
-		href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside" 
-		target="_blank" 
-		coords="0,100,79,488.5" 
-		shape="rect" 
-	/>
-	<area 
-		alt="Footer Section" 
-		title="footer" 
-		href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" 
-		target="_blank" 
-		coords="0,488.5,540,540" 
-		shape="rect" 
-	/>
+  <area 
+    alt="Header Section" 
+    title="header" 
+    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" 
+    target="_blank" 
+    coords="0,0,540,100" 
+    shape="rect" 
+  />
+  <area 
+    alt="Content Section"
+    title="main" 
+    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main" 
+    target="_blank" 
+    coords="79,100,540,488.5" 
+    shape="rect" 
+  />
+  <area 
+    alt="Sidebar Section" 
+    title="aside" 
+    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside" 
+    target="_blank" 
+    coords="0,100,79,488.5" 
+    shape="rect" 
+  />
+  <area 
+    alt="Footer Section" 
+    title="footer" 
+    href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" 
+    target="_blank" 
+    coords="0,488.5,540,540" 
+    shape="rect" 
+  />
 </map>
 ```
 
@@ -224,15 +224,15 @@ The element has various attributes to set whether there are controls, if the vid
 
 ```html
 <video
-	controls    
-	muted    
-	loop
+  controls    
+  muted    
+  loop
 >    
-	<source        
-		src="/img/video.mp4"        
-		type="video/mp4"    
-	/>    
-	<p>Sorry, your browser doesn't support this video.</p>
+  <source        
+    src="/img/video.mp4"        
+    type="video/mp4"    
+  />    
+  <p>Sorry, your browser doesn't support this video.</p>
 </video>
 ```
 
@@ -248,21 +248,21 @@ Whichever of these text alternatives we're using (we can include multiple), we c
 
 ```html
 <video
-	controls    
-	muted    
-	loop
+  controls    
+  muted    
+  loop
 >    
-	<source        
-		src="/img/video.mp4"        
-		type="video/mp4"    
-	/>    
-	<track        
-		default        
-		kind="captions"        
-		srclang="en-AU"        
-		src="/img/subtitles.vtt"    
-	/>
-	<p>Sorry, your browser doesn't support this video.</p>
+  <source        
+    src="/img/video.mp4"        
+    type="video/mp4"    
+  />    
+  <track        
+    default        
+    kind="captions"        
+    srclang="en-AU"        
+    src="/img/subtitles.vtt"    
+  />
+  <p>Sorry, your browser doesn't support this video.</p>
 </video>
 ```
 
@@ -274,14 +274,14 @@ The [definition list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/
 
 ```html
 <dl>
-	<dt>Size</dt>    
-	<dd>40 to 54 cm</dd>    
+  <dt>Size</dt>    
+  <dd>40 to 54 cm</dd>    
 
-	<dt>Weight</dt>    
-	<dd>2.5 to 5kg</dd>    
+  <dt>Weight</dt>    
+  <dd>2.5 to 5kg</dd>    
 
-	<dt>Lifespan</dt>    
-	<dd>About 10 years in the wild and up to 15 years in captivity.</dd>
+  <dt>Lifespan</dt>    
+  <dd>About 10 years in the wild and up to 15 years in captivity.</dd>
 </dl>
 ```
 
@@ -291,14 +291,14 @@ The [`details`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/detail
 
 ```html
 <details>
-	<summary>Are Quokkas real?</summary>
-	<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
-	<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
+  <summary>Are Quokkas real?</summary>
+  <p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
+  <p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
 </details>
 
 <details>    
-	<summary>Can I have one?</summary>    
-	<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
+  <summary>Can I have one?</summary>    
+  <p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
 </details>
 ```
 
@@ -308,14 +308,14 @@ Newly introduced in 2023, the `name` attribute can be added to a group of collap
 
 ```html
 <details name="faq">
-	<summary>Are Quokkas real?</summary>
-	<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
-	<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
+  <summary>Are Quokkas real?</summary>
+  <p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
+  <p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
 </details>
 
 <details name="faq">    
-	<summary>Can I have one?</summary>    
-	<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
+  <summary>Can I have one?</summary>    
+  <p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
 </details>
 ```
 
@@ -325,12 +325,12 @@ You can use the [`address` element](https://developer.mozilla.org/en-US/docs/Web
 
 ```html
 <address>    
-	1 Henderson Ave<br/>    
-	Rottnest Island, WA<br/>    
-	Australia 6161
+  1 Henderson Ave<br/>    
+  Rottnest Island, WA<br/>    
+  Australia 6161
 </address>
 
 <address>    
-	<a href="tel:+61893729730">(08) 9372 9730</a>
+  <a href="tel:+61893729730">(08) 9372 9730</a>
 </address>
 ```

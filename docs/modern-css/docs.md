@@ -87,6 +87,10 @@ We can change the order the flex children appear on the page without changing th
 }
 ```
 
+### 2.1.7 More Flexbox Capabilities
+
+[Flexbox Froggy](https://flexboxfroggy.com/) is a very powerful, gamified way to get your head around more of the capabilties of Flexbox. It covers not just these properties, but more advanced ones and how they interact with one another.
+
 ## 2.2 CSS Grid
 
 [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) (`display: grid`) is more powerful than Flexbox and has greater control over items in both vertical and horizontal directions. 
@@ -199,3 +203,7 @@ If you're having to support [older browsers that don't support](https://caniuse.
 	/* CSS Grid code goes here */
 } 
 ```
+
+### 2.2.5 More CSS Grid Capabilities
+
+[Grid Garden](https://cssgridgarden.com/) is a gamified way to get your head around more of the capabilties of CSS Grid. It covers not just these properties, but more advanced ones and how they interact with one another.

@@ -32,6 +32,10 @@ Use the order property to change the order of the sections so that the current s
 
 *Hint*: there's a data attribute on each section with the section numbering, eg. `.item[data-section="2.0"]` would select the current section (2.0 Modern CSS).
 
+### 2.1.7 More Flexbox Capabilities
+
+Use [Flexbox Froggy](https://flexboxfroggy.com/) to try out more of the Flexbox capabilities.
+
 ## 2.2 CSS Grid
 
 ### 2.2.1 Grid Columns and Rows
@@ -59,3 +63,7 @@ Use grid areas to lay out the cards so they match the design.
 ### 2.2.4 Styling Fallbacks
 
 Wrap all the grid code in a `@supports` query, keeping the original flexbox code as a fallback
+
+### 2.2.5 More CSS Grid Capabilities
+
+Use [Grid Garden](https://cssgridgarden.com/) to try out more of the CSS Grid capabilities.
