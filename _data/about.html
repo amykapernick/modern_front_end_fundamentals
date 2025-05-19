@@ -1,144 +1,127 @@
-<header>
-	<nav>
-		<a href="#forms">Forms</a>
-		<a href="#media">Media</a>
-		<a href="#videos">Videos</a>
-		<a href="#other">Other</a>
-	</nav>
-</header>
-<main id="main">
-	<article>
-		<header>
-			<h1>About Lego</h1>
-			<span>Author: Stolen from Lego Website</span>
-			<time datetime="2024-08-26">26 Aug 2024</time>
-		</header>
-		<section data-devTools="content" class="content">
-			<h2>History of Lego</h2>
+<div>
+	<h1>Quokkas</h1>
+	<div>
+		<a href="#what">What?</a>
+		<a href="#why">Why?</a>
+		<a href="#faq">FAQs</a>
+		<a href="#contact">More Quokkas!</a>
+	</div>
+</div>
+<div>
+	<div>
+		<h2 id="what">What are Quokkas</h2>
+		<p>Quokkas are the happiest animal in Australia that surprisngly isn't trying to kill you. They're Australian marsupials (related to kangaroos and wallabies), only found on a small island called Rottnest Island, off the coast of Perth. They're herbivores (although will eat most food you leave lying around) and have no natural predators therefore aren't afraid of humans.</p>
+		<img src="/img/rottnest.jpg" />
+		<p>But what Quokkas are most known for, is the fact that they look like they're smiling and their penchant for selfies. Quokkas have a happy, genial expression which is actually due to evolution. Like canines, Quokkas' mouths open slightly to pant allowing them to cool themselves. When they're happy and hot (which is quite often, Perth is a bit warmer than Norway 😂), they seem like they are smiling.</p>
+		<img src="/img/quokka_2.jpg" />
+		<p>Although tourists and visitors to the island love Quokkas, the locals don't appreciate them as much. Due to their lack of fear for humans, Quokkas will regularly enter buildings such as homes or restaurants.</p>
+		<img src="/img/quokka_3.jpg" />
+		<img src="/img/quokka_1.jpg" />
 
-			<details name="faqs">
-				<summary>But why Lego?</summary>
-				<p>Because why not.</p>
-			</details>
-
-			<p>The name 'LEGO' is an abbreviation of the two Danish words "leg godt", meaning "play well". It's our name and it's our ideal.</p>
-
-			<img width="300" height="300" src="/img/logo.svg" alt="Lego Logo" />
-
-			<p>The LEGO Group was founded in 1932 by Ole Kirk Kristiansen. The company has since passed from generation to generation and is to this day still owned by the Kirk Kristiansen family.</p>
-			<p>Writing semantic HTML is the single best thing we as developers can do for accessibility</p>
-			<p>It has come a long way over the past 90 years - from a small carpenter's workshop to a modern, global enterprise that is now one of the world's largest manufacturers of toys.</p>
-			<p>The LEGO brick is our most important product. We are proud to have been named "Toy of the Century" twice. Our products have undergone extensive development over the years - but the foundation remains the traditional LEGO brick.</p>
-			<p>The brick in its present form was launched in 1958. The interlocking principle with its tubes makes it unique and offers unlimited building possibilities. It's just a matter of getting the imagination going - and letting a wealth of creative ideas emerge through play.</p>
-		</section>
-
-		<section id="forms">
-			<h2>Forms and labels</h2>
-
-			<form id="form">
-				<label for="field_name">Full Name</label>
-				<input type="text" name="name" id="field_name" placeholder="Full Name" />
-				<label for="fdvbeUIPGBSDf">Email Address</label>
-				<input type="email" name="email" id="fdvbeUIPGBSDf" required />
-				<label>
-					Phone Number
-					<input type="tel" name="phone" required />
-				</label>
-
-				<label for="transport">What was your mode of transport?</label>
-				<input type="text" name="transport" id="transport" list="transport_methods" />
-				<datalist id="transport_methods">
-					<option value="Train">Train/Metro/Underground</option>
-					<option value="Bike" />
-					<option value="Motorbike" />
-					<option value="car" />
-					<option value="bus" />
-					<option value="boat">Boat/Ferry/Busboat</option>
-					<option value="walk" />
-				</datalist>
-
-				<label for="awesomeness">How much do you like Lego?</label>
-				<input type="range" max="10" value="7" step="1" id="awesomeness" list="lego_values" />
-				<datalist id="lego_values">
-					<option value="0">I stepped on Lego & it traumatised me</option>
-					<option value="5">It's ok, but I prefer puzzles</option>
-					<option value="10">I can't afford food, but I have Lego</option>
-				</datalist>
-			</form>
-
-		</section>
-		<section id="media">
-			<h2>Media Items</h2>
-
-			<figure>
-				<img src="/img/image_600.jpg" alt="View of Vesuvius from the hill in Naples" />
-				<figcaption>Weekend in Italy, November 2022</figcaption>
-			</figure>
-
-			<picture>
-				<source srcset="/img/image_1200.jpg" media="(min-width: 1100px)" />
-				<source srcset="/img/image_900.jpg" media="(min-width: 900px)" />
-				<source srcset="/img/image_600.jpg" media="(min-width: 700px)" />
-				<source srcset="/img/image_300.jpg" media="(min-width: 400px)" />
-				<img src="/img/image_1200.jpg" alt="Image for demo purposes" />
-			</picture>
-
-			<picture>
-				<source srcset="/img/image_300.avif" type="image/avif" />
-				<source srcset="/img/image_300.webp" type="image/webp" />
-				<img src="/img/image_1200.jpg" alt="Image for demo purposes" />
-			</picture>
-
-			<h3 id="videos">Videos</h3>
-
-			<video controls muted loop>
-				<source src="/img/video.mp4" type="video/mp4" />
-				<track src="/img/subtitles.vtt" kind="captions" srclang="en-AU" default />
-			</video>
-
-
-		</section>
-		<section id="other">
-			<h2>Other Fun Things</h2>
-			<h3>FAQs</h3>
-			<details name="faqs">
-				<summary>Are Quokkas real?</summary>
-				<div>
-					<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
-					<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
-				</div>
-			</details>
-
-			<details name="faqs">
-				<summary>Can I have one?</summary>
-				<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
-			</details>
-
-			<h3>Dialog</h3>
-
-			<dialog>
-				<p>Hello there!</p>
-				<button>Close</button>
-			</dialog>
-			<button>Open Dialog</button>
-
-			<script>
-				const dialog = document.querySelector("dialog");
-				const showButton = document.querySelector("dialog + button");
-				const closeButton = document.querySelector("dialog button");
-
-				// "Show the dialog" button opens the dialog modally
-				showButton.addEventListener("click", () => {
-					dialog.showModal();
-				});
-
-				// "Close" button closes the dialog
-				closeButton.addEventListener("click", () => {
-					dialog.close();
-				});
-			</script>
-
-		</section>
-	</article>
-</main>
-<footer id="footer">&copy; 2023</footer>
+		<h3>Quokka Stats</h3>
+		<div>
+			<h4>Size</h4>
+			<p>40 to 54 cm</p>
+			<h4>Weight</h4>
+			<p>2.5 to 5kg</p>
+			<h4>Lifespan</h4>
+			<p>About 10 years in the wild and up to 15 years in captivity.</p>
+		</div>
+		<h4>Quokkas Compared</h4>
+		<table>
+			<thead>
+				<tr>
+					<th scope="col">Animal</th>
+					<th scope="col">Size</th>
+					<th scope="col">Weight</th>
+					<th scope="col">Diet</th>
+					<th scope="col">Habitat</th>
+					<th scope="col">Conservation Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Quokka</th>
+					<td>40-54cm</td>
+					<td>2.5-5kg</td>
+					<td>Herbivore</td>
+					<td>South-west Western Australia</td>
+					<td>Vulnerable</td>
+				</tr>
+				<tr>
+					<th scope="row">Kangaroo</th>
+					<td>2m</td>
+					<td>90kg</td>
+					<td>Herbivore</td>
+					<td>All over</td>
+					<td>Least Concern</td>
+				</tr>
+				<tr>
+					<th scope="row">Platypus</th>
+					<td>43-50cm</td>
+					<td>0.7-2.4kg</td>
+					<td>Carnivore</td>
+					<td>East and South-Eastern Australia</td>
+					<td>Near Threatened</td>
+				</tr>
+				<tr>
+					<th scope="row">Koala</th>
+					<td>60-85cm</td>
+					<td>4-15kg</td>
+					<td>Eucalyptus Leaves</td>
+					<td>Eastern and Souther Australia</td>
+					<td>Vulnerable</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h2 id="why">Why am I reading about Quokkas?</h2>
+		<p>Because writing stock content for these things is boring, and Quokkas are cool.</p>
+		<p>Also Quokkas are amazing and if you don't agree you can go off and find boring <i>Lorem Ipsum</i> content.</p>
+		<img src="/img/quokka_5.jpg" />
+	</div>
+	<div>
+		<h2 id="faq">Frequently Asked Quokkas</h2>
+		<div>
+			<h3>Are Quokkas real?</h3>
+			<p>Is Australia real? Are we even real? What is real? Are we all just a figment of someone's imagination? Or part of the matrix?</p>
+			<p>Yes, Quokkas are real. They seem too good to be true, and a bit too weird (like most animals in Australia, I'm still convinced that platypus' are a myth), but they do genuinely exist.</p>
+		</div>
+		<div>
+			<h3>Can I have one?</h3>
+			<p>Quokkas are only native to one island in Australia, and don't do well outside of their natural habitat. They're not great as pets, it would be similar to keeping a squirrel as a pet.</p>
+		</div>
+		<div>
+			<h3>What threatens Quokkas?</h3>
+			<p>Although mainland Quokkas are threatened by the European red fox, domesticated cats and dogs as well as wild birds of prey and dingoes, Rottnest Island (where most Quokkas live), is free of most of these predators.</p>
+		</div>
+		<div>
+			<h3>What happens if I try and steal a Quokka?</h3>
+			<p>Rottnest Island Authority can issue a $100 fine for picking up a Quokka, and you can be taken to court and subject to a fine of up to $1000.</p>
+		</div>
+		<div>
+			<h3>What does a Quokka do when threatened?</h3>
+			<p>If a Quokka mother is threatened by a predator, she will often throw her baby on the ground to distract the predator and save her own life.</p>
+			<img src="/img/quokka_6.jpg" />
+		</div>
+		<div>
+			<h3>How do I pronounce "Quokka"?</h3>
+			<p>Quokka is pronounced <em>kwaa-ka</em></p>
+			<p>The name Quokka comes from the Aboriginal people that lived in Western Australia where they were first discovered.</p>
+		</div>
+	</div>
+	<div>
+		<h2 id="contact">Where can I find out more about Quokkas?</h2>
+		<form>
+			<label for="name">Name</label>
+			<input id="name" name="name" placeholder="Name" />
+			<label for="email">Email</label>
+			<input id="email" type="email" name="email" placeholder="Email" required />
+			<button>Tell me more about Quokkas 🐨</button>
+		</form>
+	</div>
+</div>
+<div>
+	No Quokkas were harmed in the making of this page, we promise!
+</div>

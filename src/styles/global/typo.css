@@ -34,16 +34,13 @@ h3 {
 	font-weight: 600;
 }
 
-h4, h5 {
-	color: inherit;
-}
-
 h4 {
 	font-size: 1.1em;
 	font-weight: 600;
 }
 
 h5 {
+	color: inherit;
 	font-size: 1em;
 	font-weight: 600;
 }
@@ -67,4 +64,9 @@ nav {
 button, .btn, input[type="submit"] {
 
 	@include button;
+}
+
+pre {
+	padding: 1em;
+	border-radius: 0.5em;
 }

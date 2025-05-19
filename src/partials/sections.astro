@@ -1,13 +1,13 @@
 ---
 import Card from "@components/card"
 
-const { sets } = Astro.props
+const { sections } = Astro.props
 ---
 
 <style>
-	.sets {
-		margin: 0;
-		padding: 0;
+	.sections {
+		margin: 10px;
+		padding: 10px;
 		list-style: none;
 	}
 
@@ -16,7 +16,7 @@ const { sets } = Astro.props
 	}
 
 	:global(body:not(.css_mode)) {
-		& .sets {
+		& .sections {
 			gap: 10px;
 			display: flex;
 			flex-wrap: wrap;
@@ -27,7 +27,7 @@ const { sets } = Astro.props
 		}
 
 		@supports(grid-template-areas: '.') {
-			& .sets {
+			& .sections {
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 				grid-gap: 20px;
@@ -37,12 +37,11 @@ const { sets } = Astro.props
 	}
 </style>
 
-<ul class="sets" data-devTools="sets">
-	{sets
-		.sort((a, b) => a.id - b.id)
-		.map((props) => (
-		<li class="item" data-devTools="item">
-			<Card {...props} />
+<ul class="sections" data-devTools="sections">
+	{sections
+		.map((props, i) => (
+		<li class="item" data-devTools="item" data-section={`${i + 1}.0`}>
+			<Card {...props} name={`${i + 1}.0 - ${props.name}`} />
 		</li>
 	))}
 </ul>
