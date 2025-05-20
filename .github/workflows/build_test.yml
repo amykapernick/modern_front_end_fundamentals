@@ -19,3 +19,16 @@ jobs:
       
       - name: Install Node Modules
         run: npm install
+
+      # This is just specific to Netlify hosted websites, would be different depending on what platform you host on
+      - name: Deploy to Netlify
+        id: build_site
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './dist'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      - name: Test URL
+        run: echo ${{steps.build_site.outputs.deploy_url}}
