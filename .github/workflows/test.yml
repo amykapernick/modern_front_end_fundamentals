@@ -1,0 +1,22 @@
+# Name of the Workflow
+name: Build and Test
+
+# How the workflow is triggered, in this case every time a pull request to the prod branch gets opened, reopened or the code in the PR gets updated
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+    branches: [prod]
+
+# The jobs/tasks that the workflow completes, by default these will all run at the same time
+# https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow
+jobs:
+  # Each job gets a different name, eg. `build`, but the name must be unique
+  build:
+    # Set the platform that the job will run on, you can choose a number of different options, but running on Linux is the cheapest option
+    # https://docs.github.com/en/actions/using-jobs/choosing-the-runner-for-a-job
+    runs-on: ubuntu-22.04
+    # Each job has a number of steps to complete (these will complete one after another), most of the time your first step will be to checkout the repo code, otherwise you won't have anything to work with
+    steps:
+      - name: Checkout Repo Code
+        uses: actions/checkout@v3
