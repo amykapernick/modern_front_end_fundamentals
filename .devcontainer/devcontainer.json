@@ -2,7 +2,7 @@
   "name": "Modern Front-End Fundamentals",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
   "postCreateCommand": "npm install  && npx playwright install --with-deps",
-  "postStartCommand": "npm start & npm run test:inspect",
+  "postStartCommand": "npm start & npm test:inspect",
   "forwardPorts": [4321, 3000, 8080],
   "portsAttributes": {
     "4321": {
