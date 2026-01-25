@@ -1,7 +1,8 @@
 {
   "name": "Modern Front-End Fundamentals",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-24-bullseye",
-  "postCreateCommand": "npm install",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  "postCreateCommand": "npm install  && npx playwright install --with-deps && npm start",
+  "postStartCommand": "npm start",
   "forwardPorts": [4321],
   "portsAttributes": {
     "4321": {
