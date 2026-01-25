@@ -1,13 +1,12 @@
 # Modern Front End Fun-damentals
 
-[GitHub Repo](http://kapers.dev/workshop)
+Content from 1 day workshop
 
 ## Sections
 
-1. [Semantic HTML and Accessibility](./docs/semantic-html.mdl)
-2. [CSS Layouts and Modern CSS](./docs/modern-css.md)
-3. [Accessibility Testing](./docs/accessibility.md)
-4. [UI Testing](./docs/ui-testing.md)
+1. [CSS Layouts and Modern CSS](./docs/modern-css.md)
+2. [Semantic HTML and Accessibility](./docs/accessibility.md)
+3. [UI Testing](./docs/ui-testing.md)
 
 
 ## Resources
