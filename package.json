@@ -9,8 +9,10 @@
     "lint": "eslint -c ./config/eslint.config.mjs --fix",
     "ts": "tsc",
     "clean": "rm -rf node_modules .asto dist",
-    "test": "npx playwright test --ui-host=0.0.0.0 --ui-port=8080",
-    "test:update": "npx playwright test --update-snapshots"
+    "test": "npx playwright test",
+    "test:inspect": "npx playwright test --ui-host=0.0.0.0 --ui-port=8080",
+    "test:update": "npx playwright test --update-snapshots",
+    "test:codegen": "npx playwright codegen http://localhost:4321"
   },
   "overrides": {
     "stylelint": "^17.0.0"

@@ -1,13 +1,27 @@
 {
   "name": "Modern Front-End Fundamentals",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
-  "postCreateCommand": "npm install  && npx playwright install --with-deps && npm start",
-  "postStartCommand": "npm start",
-  "forwardPorts": [4321],
+  "postCreateCommand": "npm install  && npx playwright install --with-deps",
+  "postStartCommand": "npm start & npm run test:inspect",
+  "forwardPorts": [4321, 3000, 8080],
   "portsAttributes": {
     "4321": {
-      "label": "Astro Dev",
+      "label": "Workshop App",
       "onAutoForward": "notify"
+    },
+    "8080": {
+      "label": "Playwright Inspector"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "ms-playwright.playwright",
+        "deque-systems.vscode-axe-linter",
+        "dbaeumer.vscode-eslint",
+        "stylelint.vscode-stylelint"
+      ]
     }
   },
   "remoteUser": "node"

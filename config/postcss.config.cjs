@@ -26,9 +26,9 @@ module.exports = {
 				rule.selector = rule.selector?.replace(/:where\((\.astro-\w+)\)/g, "$1");
 			},
 		},
-		stylelint({
+		process.env.NODE_ENV === 'development' ? null : stylelint({
 			configFile: `./config/stylelint.config.cjs`,
 			fix: true
 		})
-	],
+	].filter(Boolean),
 }; 
