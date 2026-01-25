@@ -30,3 +30,6 @@ pnpm-debug.log*
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Playwright
+/playwright/.auth/
