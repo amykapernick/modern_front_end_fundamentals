@@ -1,1 +1,82 @@
 /* Turn on CSS Mode then write your CSS styles here */
+
+.header .menu {
+    display: flex;
+    gap: 10px;
+}
+
+.sections {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sections .item {
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px; */
+    /* flex: {grow} {shrink} {basis} */
+    flex: 1 1 200px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .menu {
+    align-items: center;
+}
+
+.sections .item[data-section="2.0"] {
+    order: -1; 
+}
+
+.sections .item[data-section="1.0"] {
+    order: 1;
+}
+
+@supports(grid-template-areas: '.') {
+    .sections {
+        display: grid;
+        /* grid-template-columns: 200px 200px 200px; */
+        /* grid-template-columns: 33.33% 33.33% 33.33%; */
+        /* grid-template-columns: repeat(3, 33.33%);  */
+        /* grid-template-columns: repeat(4, 1fr); */
+        /* grid-template-columns: repeat(2, 1fr 2fr); */
+        /* grid-template-columns: repeat(auto-fit, 250px); */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        /* gap: 20px; */
+        /* column-gap: 20px; */
+        /* row-gap: 40px;  */
+        gap: 40px 20px;
+    }
+
+    .sections .card {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        /* grid-template-rows: auto auto; */
+        grid-template-areas:
+            'name name name'
+            '📄  .    exercises';
+        grid-template-rows: 1fr auto;
+    }
+
+    .sections .card .name {
+        /* grid-column: span 3;  */
+        /* grid-column-start: 1; */
+        /* grid-column-end: 4;  */
+        /* grid-column-end: -1; */
+        /* grid-column: 1  / -1; */
+        grid-area: name;
+    }
+
+    .sections .card .docs {
+        grid-area: 📄;
+    }
+
+    .sections .card .exercises {
+        grid-area: exercises;
+    }
+}
