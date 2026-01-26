@@ -40,4 +40,10 @@ jobs:
         run: npm test
         env: 
           BASE_URL: ${{ steps.builddeploy.outputs.static_web_app_url }}
+
+      - name: Add Issues from Comments
+        uses: "alstr/todo-to-issue-action@v4"
+        with:
+          AUTO_ASSIGN: true
+          CLOSE_ISSUES: true
         
