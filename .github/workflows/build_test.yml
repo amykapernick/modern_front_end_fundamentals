@@ -38,4 +38,6 @@ jobs:
 
       - name: Playwright Tests
         run: npm test
+        env: 
+          BASE_URL: ${{ steps.builddeploy.outputs.static_web_app_url }}
         
