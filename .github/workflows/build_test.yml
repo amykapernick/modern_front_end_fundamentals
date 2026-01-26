@@ -32,3 +32,10 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+
+      - name: Setup Playwright
+        run: npx playwright install --with-deps
+
+      - name: Playwright Tests
+        run: npm test
+        
