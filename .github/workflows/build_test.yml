@@ -36,6 +36,11 @@ jobs:
       - name: Setup Playwright
         run: npx playwright install --with-deps
 
+      - name: Clean test artifacts
+        run: |
+          rm -rf test-results playwright-report
+        continue-on-error: true
+
       - name: Playwright Tests
         run: npm test
         env: 
