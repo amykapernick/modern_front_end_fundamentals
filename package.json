@@ -14,6 +14,9 @@
     "test:update": "npx playwright test --update-snapshots",
     "test:codegen": "npx playwright codegen http://localhost:4321"
   },
+  "engines": {
+    "node": "^22.0.0"
+  },
   "overrides": {
     "stylelint": "^17.0.0"
   },
